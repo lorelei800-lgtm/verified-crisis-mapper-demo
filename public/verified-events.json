@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-27T09:32:48.954Z",
-  "eventCount": 42,
+  "generatedAt": "2026-05-27T14:32:57.418Z",
+  "eventCount": 43,
   "events": [
     {
       "eventId": "gdacs-TC-1001272",
@@ -8,8 +8,8 @@
       "hazardType": "cyclone",
       "title": "Green notification for tropical cyclone JANGMI-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).",
       "description": "From 27/05/2026 to 27/05/2026, a Tropical Depression (maximum wind speed of 167 km/h) JANGMI-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).",
-      "lat": 9.6,
-      "lng": 137.5,
+      "lat": 10.3,
+      "lng": 137.2,
       "occurredAt": "2026-05-27T06:00:00.000Z",
       "detectedAt": "2026-05-27T08:07:00.000Z",
       "severity": "green",
@@ -22,7 +22,7 @@
         "metadata": 9,
         "total": 69
       },
-      "h3Cell": "8873561945fffff",
+      "h3Cell": "8873097439fffff",
       "isFused": false,
       "sourceCount": 1,
       "lineage": {
@@ -201,6 +201,40 @@
             "eventId": "gdacs-EQ-1542046",
             "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542046",
             "detectedAt": "2026-05-23T06:00:52.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103896",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Vietnam",
+      "description": "On 23/05/2026, a flood started in Vietnam, lasting until 25/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "lat": 11.6614957,
+      "lng": 108.1335279,
+      "occurredAt": "2026-05-23T01:00:00.000Z",
+      "detectedAt": "2026-05-27T13:34:55.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103896",
+      "country": "VNM",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8865b632cbfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103896",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103896",
+            "detectedAt": "2026-05-27T13:34:55.000Z"
           }
         ]
       }
@@ -414,7 +448,7 @@
       "sourceType": "gdacs",
       "hazardType": "flood",
       "title": "Green flood alert in Thailand",
-      "description": "On 13/05/2026, a flood started in Thailand, lasting until 23/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "description": "On 13/05/2026, a flood started in Thailand, lasting until 26/05/2026 (last update). The flood caused 0 deaths and 3 displaced .",
       "lat": 8.3991866,
       "lng": 98.2608392,
       "occurredAt": "2026-05-13T01:00:00.000Z",
@@ -454,7 +488,7 @@
       "sourceType": "gdacs",
       "hazardType": "flood",
       "title": "Green flood alert in Türkiye",
-      "description": "On 20/04/2026, a flood started in Türkiye, lasting until 21/05/2026 (last update). The flood caused 1 deaths and 90 displaced .",
+      "description": "On 20/04/2026, a flood started in Türkiye, lasting until 26/05/2026 (last update). The flood caused 1 deaths and 90 displaced .",
       "lat": 41.2537754,
       "lng": 32.6669335,
       "occurredAt": "2026-04-20T01:00:00.000Z",
@@ -488,7 +522,7 @@
       "sourceType": "gdacs",
       "hazardType": "flood",
       "title": "Green flood alert in Indonesia",
-      "description": "On 02/03/2026, a flood started in Indonesia, lasting until 21/05/2026 (last update). The flood caused 19 deaths and 1624 displaced .",
+      "description": "On 02/03/2026, a flood started in Indonesia, lasting until 24/05/2026 (last update). The flood caused 19 deaths and 1625 displaced .",
       "lat": -7.8026253,
       "lng": 112.1686315,
       "occurredAt": "2026-03-02T01:00:00.000Z",
