@@ -1,0 +1,386 @@
+{
+  "type": "FeatureCollection",
+  "name": "Bangkok Flood 2026 — Verified Crisis Mapper Demo Reports",
+  "metadata": {
+    "scenario": "Bangkok Flood October 2026",
+    "total_reports": 28,
+    "green_tier": 10,
+    "amber_tier": 11,
+    "red_tier": 7,
+    "generated": "2026-10-14",
+    "note": "Demo data for UNDP Challenge submission. Upload to Re:Earth Visualizer."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-001", "district": "Don Mueang", "damage_level": "destroyed",
+        "infra_type": "residential", "trust_score": 93, "tier": "green",
+        "channel": "pwa", "timestamp": "2026-10-14T06:12:00Z",
+        "landmark": "Near Don Mueang Market, Soi Chaeng Watthana 10",
+        "image_integrity": 38, "geospatial": 28, "cross_report": 18, "metadata": 9,
+        "has_c2pa": true, "h3_cell": "8865b1b6dffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5988, 13.9125] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-002", "district": "Don Mueang", "damage_level": "partial",
+        "infra_type": "community", "trust_score": 88, "tier": "green",
+        "channel": "pwa", "timestamp": "2026-10-14T07:34:00Z",
+        "landmark": "Don Mueang Community Hall, adjacent to Klong Ban Mai",
+        "image_integrity": 36, "geospatial": 27, "cross_report": 17, "metadata": 8,
+        "has_c2pa": false, "h3_cell": "8865b1b6dffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.6102, 13.9051] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-003", "district": "Don Mueang", "damage_level": "destroyed",
+        "infra_type": "utility", "trust_score": 91, "tier": "green",
+        "channel": "pwa", "timestamp": "2026-10-14T08:05:00Z",
+        "landmark": "Electrical substation, Vibhavadi Rangsit Rd km 8",
+        "image_integrity": 37, "geospatial": 29, "cross_report": 16, "metadata": 9,
+        "has_c2pa": true, "h3_cell": "8865b1b4bffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5901, 13.8956] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-004", "district": "Don Mueang", "damage_level": "partial",
+        "infra_type": "transport", "trust_score": 87, "tier": "green",
+        "channel": "browser", "timestamp": "2026-10-14T09:22:00Z",
+        "landmark": "Flooding on expressway on-ramp, Don Mueang Tollway",
+        "image_integrity": 35, "geospatial": 26, "cross_report": 18, "metadata": 8,
+        "has_c2pa": false, "h3_cell": "8865b1b0bffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5845, 13.8801] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-005", "district": "Laksi", "damage_level": "destroyed",
+        "infra_type": "residential", "trust_score": 92, "tier": "green",
+        "channel": "pwa", "timestamp": "2026-10-14T10:11:00Z",
+        "landmark": "Laksi Village Moo 3 — ground floor submerged 1.5m",
+        "image_integrity": 38, "geospatial": 28, "cross_report": 17, "metadata": 9,
+        "has_c2pa": true, "h3_cell": "8865b1a2bffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5712, 13.8620] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-006", "district": "Bang Khen", "damage_level": "partial",
+        "infra_type": "government", "trust_score": 87, "tier": "green",
+        "channel": "browser", "timestamp": "2026-10-14T11:00:00Z",
+        "landmark": "Bang Khen District Office — basement flooded",
+        "image_integrity": 34, "geospatial": 27, "cross_report": 18, "metadata": 8,
+        "has_c2pa": false, "h3_cell": "8865b1a09ffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5620, 13.8488] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-007", "district": "Chatuchak", "damage_level": "destroyed",
+        "infra_type": "residential", "trust_score": 91, "tier": "green",
+        "channel": "pwa", "timestamp": "2026-10-14T12:30:00Z",
+        "landmark": "Chatuchak housing estate Block C, near JJ Market",
+        "image_integrity": 37, "geospatial": 28, "cross_report": 17, "metadata": 9,
+        "has_c2pa": true, "h3_cell": "8865b18d7ffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5540, 13.8350] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-008", "district": "Chatuchak", "damage_level": "partial",
+        "infra_type": "community", "trust_score": 88, "tier": "green",
+        "channel": "pwa", "timestamp": "2026-10-14T13:15:00Z",
+        "landmark": "Chatuchak Park community shelter — overflow 80cm",
+        "image_integrity": 35, "geospatial": 26, "cross_report": 18, "metadata": 9,
+        "has_c2pa": false, "h3_cell": "8865b18d7ffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5490, 13.8215] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-009", "district": "Pathum Thani", "damage_level": "destroyed",
+        "infra_type": "residential", "trust_score": 91, "tier": "green",
+        "channel": "pwa", "timestamp": "2026-10-14T05:48:00Z",
+        "landmark": "Pathum Thani Moo 5, Bang Phun subdistrict",
+        "image_integrity": 38, "geospatial": 27, "cross_report": 17, "metadata": 9,
+        "has_c2pa": true, "h3_cell": "8865b1e4bffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5870, 14.0120] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-010", "district": "Pathum Thani", "damage_level": "partial",
+        "infra_type": "transport", "trust_score": 86, "tier": "green",
+        "channel": "browser", "timestamp": "2026-10-14T06:55:00Z",
+        "landmark": "Phahonyothin Road km 42, Pathum Thani — road cut off",
+        "image_integrity": 33, "geospatial": 27, "cross_report": 18, "metadata": 8,
+        "has_c2pa": false, "h3_cell": "8865b1e69ffffff",
+        "marker_color": "#16a34a"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5760, 14.0230] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-011", "district": "Pathum Thani", "damage_level": "partial",
+        "infra_type": "residential", "trust_score": 68, "tier": "amber",
+        "channel": "whatsapp", "timestamp": "2026-10-14T14:20:00Z",
+        "landmark": "Rangsit Klong 1 area, near Future Park mall",
+        "image_integrity": 22, "geospatial": 24, "cross_report": 15, "metadata": 7,
+        "has_c2pa": false, "h3_cell": "8865b1e4bffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.6150, 13.9310] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-012", "district": "Don Mueang", "damage_level": "destroyed",
+        "infra_type": "commercial", "trust_score": 63, "tier": "amber",
+        "channel": "whatsapp", "timestamp": "2026-10-14T15:05:00Z",
+        "landmark": "Shop row on Lam Luk Ka Road — unknown street number",
+        "image_integrity": 20, "geospatial": 23, "cross_report": 14, "metadata": 6,
+        "has_c2pa": false, "h3_cell": "8865b1b6dffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.6050, 13.9180] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-013", "district": "Sai Mai", "damage_level": "partial",
+        "infra_type": "utility", "trust_score": 66, "tier": "amber",
+        "channel": "browser", "timestamp": "2026-10-14T15:40:00Z",
+        "landmark": "Water treatment facility, Sai Mai area",
+        "image_integrity": 25, "geospatial": 22, "cross_report": 12, "metadata": 7,
+        "has_c2pa": false, "h3_cell": "8865b1b0bffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5780, 13.8770] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-014", "district": "Laksi", "damage_level": "minimal",
+        "infra_type": "government", "trust_score": 59, "tier": "amber",
+        "channel": "whatsapp", "timestamp": "2026-10-14T16:10:00Z",
+        "landmark": "Laksi health clinic — road access blocked",
+        "image_integrity": 19, "geospatial": 21, "cross_report": 13, "metadata": 6,
+        "has_c2pa": false, "h3_cell": "8865b1a2bffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5810, 13.8630] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-015", "district": "Bang Khen", "damage_level": "partial",
+        "infra_type": "residential", "trust_score": 67, "tier": "amber",
+        "channel": "pwa", "timestamp": "2026-10-14T16:55:00Z",
+        "landmark": "Bang Khen alley housing, near MRT Sai Ma station",
+        "image_integrity": 26, "geospatial": 20, "cross_report": 14, "metadata": 7,
+        "has_c2pa": false, "h3_cell": "8865b1a09ffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5680, 13.8510] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-016", "district": "Chatuchak", "damage_level": "destroyed",
+        "infra_type": "transport", "trust_score": 62, "tier": "amber",
+        "channel": "whatsapp", "timestamp": "2026-10-14T17:20:00Z",
+        "landmark": "Chatuchak underpass — 1.8m flood depth",
+        "image_integrity": 21, "geospatial": 24, "cross_report": 11, "metadata": 6,
+        "has_c2pa": false, "h3_cell": "8865b18d7ffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5610, 13.8370] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-017", "district": "Bang Sue", "damage_level": "partial",
+        "infra_type": "community", "trust_score": 69, "tier": "amber",
+        "channel": "browser", "timestamp": "2026-10-14T17:50:00Z",
+        "landmark": "Bang Sue Grand Station vicinity — track 12 flooded",
+        "image_integrity": 24, "geospatial": 23, "cross_report": 15, "metadata": 7,
+        "has_c2pa": false, "h3_cell": "8865b18c3ffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5450, 13.8100] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-018", "district": "Phra Nakhon", "damage_level": "minimal",
+        "infra_type": "residential", "trust_score": 61, "tier": "amber",
+        "channel": "whatsapp", "timestamp": "2026-10-14T18:30:00Z",
+        "landmark": "Phra Nakhon old town near Khao San Road area",
+        "image_integrity": 20, "geospatial": 22, "cross_report": 13, "metadata": 6,
+        "has_c2pa": false, "h3_cell": "8865b1887ffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5380, 13.7980] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-019", "district": "Phra Nakhon", "damage_level": "partial",
+        "infra_type": "public_space", "trust_score": 63, "tier": "amber",
+        "channel": "browser", "timestamp": "2026-10-14T19:00:00Z",
+        "landmark": "Sanam Luang — temporary shelter overwhelmed",
+        "image_integrity": 23, "geospatial": 21, "cross_report": 12, "metadata": 7,
+        "has_c2pa": false, "h3_cell": "8865b1887ffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5350, 13.7850] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-020", "district": "Pathum Thani", "damage_level": "destroyed",
+        "infra_type": "residential", "trust_score": 62, "tier": "amber",
+        "channel": "whatsapp", "timestamp": "2026-10-14T07:10:00Z",
+        "landmark": "Rangsit canal bank housing collapse",
+        "image_integrity": 18, "geospatial": 23, "cross_report": 15, "metadata": 6,
+        "has_c2pa": false, "h3_cell": "8865b1e69ffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5990, 13.9450] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-021", "district": "Pathum Thani", "damage_level": "partial",
+        "infra_type": "government", "trust_score": 68, "tier": "amber",
+        "channel": "browser", "timestamp": "2026-10-14T08:45:00Z",
+        "landmark": "Pathum Thani Province Hall annex — 1F flooded",
+        "image_integrity": 22, "geospatial": 25, "cross_report": 14, "metadata": 7,
+        "has_c2pa": false, "h3_cell": "8865b1e4bffffff",
+        "marker_color": "#d97706"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5920, 14.0050] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-022", "district": "Don Mueang", "damage_level": "destroyed",
+        "infra_type": "residential", "trust_score": 33, "tier": "red",
+        "channel": "whatsapp", "timestamp": "2026-10-14T20:15:00Z",
+        "landmark": "Unspecified location — photo only, no GPS",
+        "image_integrity": 8, "geospatial": 12, "cross_report": 10, "metadata": 3,
+        "has_c2pa": false, "h3_cell": "8865b1b55ffffff",
+        "marker_color": "#dc2626",
+        "flag_reason": "No GPS metadata"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.6300, 13.9005] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-023", "district": "Don Mueang", "damage_level": "destroyed",
+        "infra_type": "commercial", "trust_score": 31, "tier": "red",
+        "channel": "whatsapp", "timestamp": "2026-10-14T20:50:00Z",
+        "landmark": "Large shopping mall — image reverse-match flagged as 2011 flood",
+        "image_integrity": 4, "geospatial": 14, "cross_report": 9, "metadata": 4,
+        "has_c2pa": false, "h3_cell": "8865b1b4bffffff",
+        "marker_color": "#dc2626",
+        "flag_reason": "Recycled image from 2011 Chao Phraya flood"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5700, 13.8900] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-024", "district": "Laksi", "damage_level": "destroyed",
+        "infra_type": "utility", "trust_score": 28, "tier": "red",
+        "channel": "whatsapp", "timestamp": "2026-10-14T21:10:00Z",
+        "landmark": "Power station — AI-generation pattern detected in image",
+        "image_integrity": 2, "geospatial": 15, "cross_report": 8, "metadata": 3,
+        "has_c2pa": false, "h3_cell": "8865b1a2bffffff",
+        "marker_color": "#dc2626",
+        "flag_reason": "AI-generated image detected (FFT analysis)"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5900, 13.8680] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-025", "district": "Bang Khen", "damage_level": "destroyed",
+        "infra_type": "government", "trust_score": 32, "tier": "red",
+        "channel": "browser", "timestamp": "2026-10-14T21:35:00Z",
+        "landmark": "GPS coordinates place report in Chao Phraya River — location invalid",
+        "image_integrity": 15, "geospatial": 5, "cross_report": 8, "metadata": 4,
+        "has_c2pa": false, "h3_cell": "8865b1a09ffffff",
+        "marker_color": "#dc2626",
+        "flag_reason": "GPS spoofing detected — coordinates in river"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5500, 13.8450] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-026", "district": "Chatuchak", "damage_level": "destroyed",
+        "infra_type": "transport", "trust_score": 31, "tier": "red",
+        "channel": "whatsapp", "timestamp": "2026-10-14T22:00:00Z",
+        "landmark": "Duplicate submission — identical image hash as RPT-007",
+        "image_integrity": 5, "geospatial": 16, "cross_report": 6, "metadata": 4,
+        "has_c2pa": false, "h3_cell": "8865b18d7ffffff",
+        "marker_color": "#dc2626",
+        "flag_reason": "Duplicate image hash"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5570, 13.8280] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-027", "district": "Bang Sue", "damage_level": "destroyed",
+        "infra_type": "residential", "trust_score": 30, "tier": "red",
+        "channel": "browser", "timestamp": "2026-10-14T22:20:00Z",
+        "landmark": "Mass submission from single device — 14 reports in 90 seconds",
+        "image_integrity": 10, "geospatial": 13, "cross_report": 5, "metadata": 2,
+        "has_c2pa": false, "h3_cell": "8865b18c3ffffff",
+        "marker_color": "#dc2626",
+        "flag_reason": "Rapid repeat submission — velocity anomaly"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.5480, 13.7920] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "RPT-028", "district": "Pathum Thani", "damage_level": "destroyed",
+        "infra_type": "residential", "trust_score": 27, "tier": "red",
+        "channel": "whatsapp", "timestamp": "2026-10-14T22:45:00Z",
+        "landmark": "Coordinates outside known flood zone — geospatial inconsistency",
+        "image_integrity": 12, "geospatial": 4, "cross_report": 8, "metadata": 3,
+        "has_c2pa": false, "h3_cell": "8865b1e69ffffff",
+        "marker_color": "#dc2626",
+        "flag_reason": "Outside satellite-confirmed flood zone"
+      },
+      "geometry": { "type": "Point", "coordinates": [100.6100, 14.0400] }
+    }
+  ]
+}

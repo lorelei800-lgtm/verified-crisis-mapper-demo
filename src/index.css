@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MapLibre GL overrides */
+.maplibregl-map {
+  font-family: inherit;
+}
+.maplibregl-popup-content {
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  max-width: 280px;
+}
+.maplibregl-popup-close-button {
+  font-size: 16px;
+  padding: 4px 8px;
+  color: #6b7280;
+}
+
+/* Custom map marker pulse for green tier */
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.15); }
+}
+.marker-pulse { animation: pulse-green 2s infinite; }

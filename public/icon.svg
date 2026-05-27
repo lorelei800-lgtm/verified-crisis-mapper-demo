@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- PWA maskable icon — no rounded corners so the OS can apply its own mask.
+       The "safe zone" for maskable icons is a centred circle of ~40% radius;
+       all critical visual elements stay well inside that zone. -->
+  <rect width="512" height="512" fill="#1e40af"/>
+  <!-- White ring + dot map-pin mark (mirrors favicon.svg, scaled up).
+       Position: vertically centred at y=200, with the staff dropping to 408. -->
+  <circle cx="256" cy="200" r="80" fill="none" stroke="#ffffff" stroke-width="32"/>
+  <line   x1="256" y1="280" x2="256" y2="408" stroke="#ffffff" stroke-width="32" stroke-linecap="round"/>
+  <circle cx="256" cy="200" r="32" fill="#ffffff"/>
+</svg>

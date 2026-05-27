@@ -1,0 +1,25 @@
+{
+  "name": "Verified Crisis Mapper",
+  "short_name": "Crisis Mapper",
+  "description": "Community damage reporting with built-in disinformation defense — Bangkok Flood Scenario",
+  "start_url": "/verified-crisis-mapper-demo/",
+  "scope": "/verified-crisis-mapper-demo/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

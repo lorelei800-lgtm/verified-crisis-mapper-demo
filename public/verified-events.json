@@ -1,0 +1,1436 @@
+{
+  "generatedAt": "2026-05-27T09:32:48.954Z",
+  "eventCount": 42,
+  "events": [
+    {
+      "eventId": "gdacs-TC-1001272",
+      "sourceType": "gdacs",
+      "hazardType": "cyclone",
+      "title": "Green notification for tropical cyclone JANGMI-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).",
+      "description": "From 27/05/2026 to 27/05/2026, a Tropical Depression (maximum wind speed of 167 km/h) JANGMI-26 was active in NWPacific. The cyclone affects these countries: Japan (vulnerability Low). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 0  (0 in tropical storm).",
+      "lat": 9.6,
+      "lng": 137.5,
+      "occurredAt": "2026-05-27T06:00:00.000Z",
+      "detectedAt": "2026-05-27T08:07:00.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=TC&eventid=1001272",
+      "country": "JPN",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8873561945fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-TC-1001272",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=TC&eventid=1001272",
+            "detectedAt": "2026-05-27T08:07:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-EQ-1542497",
+      "sourceType": "gdacs",
+      "hazardType": "earthquake",
+      "title": "Green earthquake (Magnitude 6.9M, Depth:101.331km) in Chile 25/05/2026 21:52 UTC, 160 thousand in MMI VI.",
+      "description": "On 5/25/2026 9:52:19 PM, an earthquake occurred in Chile potentially affecting 160 thousand in MMI VI. The earthquake had Magnitude 6.9M, Depth:101.331km.",
+      "lat": -22.4015,
+      "lng": -68.6229,
+      "occurredAt": "2026-05-25T21:52:19.000Z",
+      "detectedAt": "2026-05-25T21:59:52.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542497",
+      "country": "CHL",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88b30b1b07fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-EQ-1542497",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542497",
+            "detectedAt": "2026-05-25T21:59:52.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-EQ-1542484",
+      "sourceType": "gdacs",
+      "hazardType": "earthquake",
+      "title": "Green earthquake (Magnitude 5.6M, Depth:31.057km) in Indonesia 25/05/2026 20:39 UTC, 3 thousand in MMI IV.",
+      "description": "On 5/25/2026 8:39:20 PM, an earthquake occurred in Indonesia potentially affecting 3 thousand in MMI IV. The earthquake had Magnitude 5.6M, Depth:31.057km.",
+      "lat": 1.1115,
+      "lng": 126.0911,
+      "occurredAt": "2026-05-25T20:39:20.000Z",
+      "detectedAt": "2026-05-25T20:56:51.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542484",
+      "country": "IDN",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8868c97a13fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-EQ-1542484",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542484",
+            "detectedAt": "2026-05-25T20:56:51.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-EQ-1542305",
+      "sourceType": "gdacs",
+      "hazardType": "earthquake",
+      "title": "Green earthquake (Magnitude 5.5M, Depth:34km) in Philippines 24/05/2026 16:48 UTC, 7 thousand in MMI V.",
+      "description": "On 5/24/2026 4:48:40 PM, an earthquake occurred in Philippines potentially affecting 7 thousand in MMI V. The earthquake had Magnitude 5.5M, Depth:34km.",
+      "lat": 9.3032,
+      "lng": 126.3113,
+      "occurredAt": "2026-05-24T16:48:40.000Z",
+      "detectedAt": "2026-05-24T17:09:32.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542305",
+      "country": "PHL",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8868412d31fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-EQ-1542305",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542305",
+            "detectedAt": "2026-05-24T17:09:32.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-EQ-1542057",
+      "sourceType": "gdacs",
+      "hazardType": "earthquake",
+      "title": "Green earthquake (Magnitude 6M, Depth:22.36km) in United States 23/05/2026 07:46 UTC, 9 thousand (in MMI>=VII).",
+      "description": "On 5/23/2026 7:46:01 AM, an earthquake occurred in United States potentially affecting 9 thousand (in MMI>=VII). The earthquake had Magnitude 6M, Depth:22.36km.",
+      "lat": 19.3406666666667,
+      "lng": -155.844833333333,
+      "occurredAt": "2026-05-23T07:46:01.000Z",
+      "detectedAt": "2026-05-23T07:52:42.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542057",
+      "country": "USA",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "885d13d0e9fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-EQ-1542057",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542057",
+            "detectedAt": "2026-05-23T07:52:42.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-EQ-1542046",
+      "sourceType": "gdacs",
+      "hazardType": "earthquake",
+      "title": "Green earthquake (Magnitude 5.7M, Depth:10km) in Southeast Indian Ridge 23/05/2026 05:41 UTC, [unknown].",
+      "description": "On 5/23/2026 5:41:34 AM, an earthquake occurred in Southeast Indian Ridge potentially affecting [unknown]. The earthquake had Magnitude 5.7M, Depth:10km.",
+      "lat": -47.488,
+      "lng": 99.9967,
+      "occurredAt": "2026-05-23T05:41:34.000Z",
+      "detectedAt": "2026-05-23T06:00:52.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542046",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88c868b8c5fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-EQ-1542046",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542046",
+            "detectedAt": "2026-05-23T06:00:52.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103894",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Bulgaria",
+      "description": "On 22/05/2026, a flood started in Bulgaria, lasting until 24/05/2026 (last update). The flood caused 0 deaths and 70 displaced .",
+      "lat": 42.8155165,
+      "lng": 24.9073116,
+      "occurredAt": "2026-05-22T01:00:00.000Z",
+      "detectedAt": "2026-05-25T05:55:52.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103894",
+      "country": "BGR",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "881ec52945fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103894",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103894",
+            "detectedAt": "2026-05-25T05:55:52.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103895",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Kyrgyzstan",
+      "description": "On 22/05/2026, a flood started in Kyrgyzstan, lasting until 24/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "lat": 40.7068689,
+      "lng": 72.8799131,
+      "occurredAt": "2026-05-22T01:00:00.000Z",
+      "detectedAt": "2026-05-27T08:55:38.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103895",
+      "country": "KGZ",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8820a83a31fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103895",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103895",
+            "detectedAt": "2026-05-27T08:55:38.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103891",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Moldova",
+      "description": "On 21/05/2026, a flood started in Moldova, lasting until 23/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "lat": 47.3269772,
+      "lng": 28.2215511,
+      "occurredAt": "2026-05-21T01:00:00.000Z",
+      "detectedAt": "2026-05-24T06:55:31.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103891",
+      "country": "MDA",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "881e425941fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103891",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103891",
+            "detectedAt": "2026-05-24T06:55:31.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103892",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Peru",
+      "description": "On 21/05/2026, a flood started in Peru, lasting until 26/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "lat": -15.4454072,
+      "lng": -70.2314104,
+      "occurredAt": "2026-05-21T01:00:00.000Z",
+      "detectedAt": "2026-05-24T09:25:42.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103892",
+      "country": "PER",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88b326c035fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103892",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103892",
+            "detectedAt": "2026-05-24T09:25:42.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103888",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in United States",
+      "description": "On 19/05/2026, a flood started in United States, lasting until 26/05/2026 (last update). The flood caused 1 deaths and 0 displaced .",
+      "lat": 30.6743643,
+      "lng": -96.3699632,
+      "occurredAt": "2026-05-19T01:00:00.000Z",
+      "detectedAt": "2026-05-21T06:15:32.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103888",
+      "country": "USA",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88446d226dfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103888",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103888",
+            "detectedAt": "2026-05-21T06:15:32.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103880",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Philippines",
+      "description": "On 13/05/2026, a flood started in Philippines, lasting until 23/05/2026 (last update). The flood caused 1 deaths and 468 displaced .",
+      "lat": 7.0537358,
+      "lng": 124.6722475,
+      "occurredAt": "2026-05-13T01:00:00.000Z",
+      "detectedAt": "2026-05-16T06:26:04.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103880",
+      "country": "PHL",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88685c5a97fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103880",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103880",
+            "detectedAt": "2026-05-16T06:26:04.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103881",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Thailand",
+      "description": "On 13/05/2026, a flood started in Thailand, lasting until 23/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "lat": 8.3991866,
+      "lng": 98.2608392,
+      "occurredAt": "2026-05-13T01:00:00.000Z",
+      "detectedAt": "2026-05-16T06:26:10.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103881",
+      "country": "THA",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 12,
+        "metadata": 9,
+        "total": 81
+      },
+      "h3Cell": "8864225245fffff",
+      "isFused": true,
+      "sourceCount": 2,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103881",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103881",
+            "detectedAt": "2026-05-16T06:26:10.000Z"
+          },
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR755",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-05-13T10:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103845",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Türkiye",
+      "description": "On 20/04/2026, a flood started in Türkiye, lasting until 21/05/2026 (last update). The flood caused 1 deaths and 90 displaced .",
+      "lat": 41.2537754,
+      "lng": 32.6669335,
+      "occurredAt": "2026-04-20T01:00:00.000Z",
+      "detectedAt": "2026-04-22T09:24:38.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103845",
+      "country": "TUR",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "882d04cdc5fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103845",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103845",
+            "detectedAt": "2026-04-22T09:24:38.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103786",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Indonesia",
+      "description": "On 02/03/2026, a flood started in Indonesia, lasting until 21/05/2026 (last update). The flood caused 19 deaths and 1624 displaced .",
+      "lat": -7.8026253,
+      "lng": 112.1686315,
+      "occurredAt": "2026-03-02T01:00:00.000Z",
+      "detectedAt": "2026-03-04T07:03:12.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103786",
+      "country": "IDN",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "888d850f01fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103786",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103786",
+            "detectedAt": "2026-03-04T07:03:12.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1018457",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in Australia",
+      "description": "The  Drought notification level is Green.",
+      "lat": -30.354,
+      "lng": 150.939,
+      "occurredAt": "2026-02-21T00:00:00.000Z",
+      "detectedAt": "2026-04-30T13:07:38.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018457",
+      "country": "AUS",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88bef5943dfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1018457",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018457",
+            "detectedAt": "2026-04-30T13:07:38.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1018545",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in China, Indonesia, Cambodia, Laos, Myanmar, Malaysia, Thailand, Vietnam",
+      "description": "The  Drought notification level is Green.",
+      "lat": 13.915,
+      "lng": 102.87,
+      "occurredAt": "2026-01-21T00:00:00.000Z",
+      "detectedAt": "2026-04-30T13:07:47.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018545",
+      "country": "CHN",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88659d42e1fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1018545",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018545",
+            "detectedAt": "2026-04-30T13:07:47.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1018546",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in United States",
+      "description": "The  Drought notification level is Green.",
+      "lat": 40.24,
+      "lng": -100.906,
+      "occurredAt": "2025-12-21T00:00:00.000Z",
+      "detectedAt": "2026-04-30T13:07:44.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018546",
+      "country": "USA",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88261a78b1fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1018546",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018546",
+            "detectedAt": "2026-04-30T13:07:44.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1018332",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in Austria, Belarus, Czech Republic, Germany, Denmark, Estonia, Lithuania, Latvia, Poland, Russia, Sweden, Slovakia, Ukraine",
+      "description": "The  Drought notification level is Green.",
+      "lat": 52.879,
+      "lng": 18.54,
+      "occurredAt": "2025-12-21T00:00:00.000Z",
+      "detectedAt": "2026-02-11T09:57:31.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018332",
+      "country": "AUT",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "881f564361fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1018332",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018332",
+            "detectedAt": "2026-02-11T09:57:31.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1018344",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in Angola, Democratic Republic of Congo, Republic of Congo, Gabon, Zambia",
+      "description": "The  Drought notification level is Orange.",
+      "lat": -7.804,
+      "lng": 15.484,
+      "occurredAt": "2025-12-11T00:00:00.000Z",
+      "detectedAt": "2026-02-04T09:58:20.000Z",
+      "severity": "orange",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018344",
+      "country": "AGO",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8883ac4eabfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1018344",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018344",
+            "detectedAt": "2026-02-04T09:58:20.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1018431",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in Madagascar",
+      "description": "The  Drought notification level is Orange.",
+      "lat": -20.603,
+      "lng": 46.543,
+      "occurredAt": "2025-11-21T00:00:00.000Z",
+      "detectedAt": "2026-04-30T13:07:35.000Z",
+      "severity": "orange",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018431",
+      "country": "MDG",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88a2322b3dfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1018431",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018431",
+            "detectedAt": "2026-04-30T13:07:35.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1018093",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in Mexico, United States",
+      "description": "The  Drought notification level is Green.",
+      "lat": 34.021,
+      "lng": -91.592,
+      "occurredAt": "2025-08-21T00:00:00.000Z",
+      "detectedAt": "2025-10-02T10:20:21.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018093",
+      "country": "MEX",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88444a79dbfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1018093",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1018093",
+            "detectedAt": "2025-10-02T10:20:21.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1017535",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in Afghanistan, Islamic Republic of Iran, Tajikistan, Turkmenistan",
+      "description": "The  Drought notification level is Green.",
+      "lat": 37.341,
+      "lng": 71.289,
+      "occurredAt": "2024-10-21T00:00:00.000Z",
+      "detectedAt": "2025-01-28T13:59:42.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1017535",
+      "country": "AFG",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8820806b1bfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1017535",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1017535",
+            "detectedAt": "2025-01-28T13:59:42.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-DR-1016449",
+      "sourceType": "gdacs",
+      "hazardType": "drought",
+      "title": "Drought is on going in Argentina, Bolivia, Brazil, Peru, Paraguay",
+      "description": "The  Drought notification level is Green.",
+      "lat": -23.437,
+      "lng": -54.679,
+      "occurredAt": "2023-06-11T00:00:00.000Z",
+      "detectedAt": "2023-09-06T12:19:52.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1016449",
+      "country": "ARG",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88a874c2d3fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-DR-1016449",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1016449",
+            "detectedAt": "2023-09-06T12:19:52.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR758",
+      "sourceType": "copernicus",
+      "hazardType": "flood",
+      "title": "Floods in Northern Thailand — Chiang Rai & Chiang Mai",
+      "description": "Continued monsoon-season flooding upstream of the Chao Phraya basin; rural damage mapping for relief planning.",
+      "lat": 19.91,
+      "lng": 99.84,
+      "occurredAt": "2026-05-08T00:00:00.000Z",
+      "detectedAt": "2026-05-09T11:30:00.000Z",
+      "severity": "orange",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "THA",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "886490a40dfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR758",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-05-09T11:30:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR752",
+      "sourceType": "copernicus",
+      "hazardType": "flood",
+      "title": "Floods in Cambodia — Mekong + Tonlé Sap",
+      "description": "Cross-border monsoon flooding extending from Thailand; Phnom Penh outskirts and central provinces affected.",
+      "lat": 12.57,
+      "lng": 104.99,
+      "occurredAt": "2026-05-05T00:00:00.000Z",
+      "detectedAt": "2026-05-06T09:00:00.000Z",
+      "severity": "orange",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "KHM",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8865829a43fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR752",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-05-06T09:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR748",
+      "sourceType": "copernicus",
+      "hazardType": "cyclone",
+      "title": "Tropical Cyclone Talim — Central Vietnam coast",
+      "description": "Landfall near Da Nang with sustained winds 140 km/h; coastal damage assessment.",
+      "lat": 16.07,
+      "lng": 108.22,
+      "occurredAt": "2026-04-25T18:00:00.000Z",
+      "detectedAt": "2026-04-26T04:30:00.000Z",
+      "severity": "red",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "VNM",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8841642e63fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR748",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-04-26T04:30:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR744",
+      "sourceType": "copernicus",
+      "hazardType": "flood",
+      "title": "Floods in Metro Manila — Marikina River basin",
+      "description": "Habagat monsoon surge; urban flooding mapping for emergency response.",
+      "lat": 14.65,
+      "lng": 121.1,
+      "occurredAt": "2026-04-18T00:00:00.000Z",
+      "detectedAt": "2026-04-19T07:00:00.000Z",
+      "severity": "orange",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "PHL",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88694ec75dfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR744",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-04-19T07:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR740",
+      "sourceType": "copernicus",
+      "hazardType": "earthquake",
+      "title": "Earthquake M6.2 — West Sumatra, Indonesia",
+      "description": "Shallow tectonic earthquake near Padang; structural damage assessment in coastal communities.",
+      "lat": -0.95,
+      "lng": 100.35,
+      "occurredAt": "2026-04-10T22:14:00.000Z",
+      "detectedAt": "2026-04-11T03:00:00.000Z",
+      "severity": "orange",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "IDN",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "888cd3b453fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR740",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-04-11T03:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR753",
+      "sourceType": "copernicus",
+      "hazardType": "volcano",
+      "title": "Volcanic eruption — Mayon, Philippines",
+      "description": "Strong eruption with pyroclastic density currents; ash plume mapping and damage extent in Albay Province.",
+      "lat": 13.2572,
+      "lng": 123.6856,
+      "occurredAt": "2026-05-02T00:00:00.000Z",
+      "detectedAt": "2026-05-03T08:00:00.000Z",
+      "severity": "orange",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "PHL",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 12,
+        "metadata": 9,
+        "total": 81
+      },
+      "h3Cell": "886865c445fffff",
+      "isFused": true,
+      "sourceCount": 2,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR753",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-05-03T08:00:00.000Z"
+          },
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-vo-2026-000065-phl",
+            "url": "https://reliefweb.int/disaster/vo-2026-000065-phl",
+            "detectedAt": "2026-05-02T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR750",
+      "sourceType": "copernicus",
+      "hazardType": "cyclone",
+      "title": "Tropical Cyclone Sinlaku — Northern Mariana Islands",
+      "description": "Category-5 cyclone making landfall at Tinian; post-event damage mapping for the US territories.",
+      "lat": 15.1,
+      "lng": 145.67,
+      "occurredAt": "2026-04-14T12:00:00.000Z",
+      "detectedAt": "2026-04-15T06:00:00.000Z",
+      "severity": "red",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "MNP",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "884f4b4359fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR750",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-04-15T06:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR742",
+      "sourceType": "copernicus",
+      "hazardType": "earthquake",
+      "title": "Earthquake M7.5 — Antigua & Barbuda",
+      "description": "Significant earthquake offshore the Lesser Antilles; structural damage assessment in capital region.",
+      "lat": 17.5127,
+      "lng": -61.1771,
+      "occurredAt": "2026-05-16T14:50:03.000Z",
+      "detectedAt": "2026-05-16T18:00:00.000Z",
+      "severity": "orange",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "ATG",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "885e5834d1fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR742",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-05-16T18:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "copernicus-EMSR738",
+      "sourceType": "copernicus",
+      "hazardType": "drought",
+      "title": "Drought — Horn of Africa",
+      "description": "Prolonged drought across pastoralist regions of Somalia and Ethiopia; vegetation-anomaly mapping.",
+      "lat": 5.15,
+      "lng": 46.2,
+      "occurredAt": "2026-03-30T00:00:00.000Z",
+      "detectedAt": "2026-04-02T12:00:00.000Z",
+      "severity": "orange",
+      "url": "https://mapping.emergency.copernicus.eu/activations/",
+      "country": "SOM",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "887aabb933fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "copernicus",
+            "eventId": "copernicus-EMSR738",
+            "url": "https://mapping.emergency.copernicus.eu/activations/",
+            "detectedAt": "2026-04-02T12:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-tc-2026-000050-fsm",
+      "sourceType": "reliefweb",
+      "hazardType": "cyclone",
+      "title": "Typhoon Sinlaku - Apr 2026",
+      "description": "A tropical cyclone named Sinlaku formed over the western North Pacific Ocean on 9 April and started moving north-west toward Guam and the far southern Northern Mariana Islands as a tropical storm. On 10 April at 0.00 UTC its centre was located over the ocean approximately 885 km south-east of Guam, with maximum sustained winds of 74 km/h. (ECHO, 10 Apr 2026)",
+      "lat": 7.43,
+      "lng": 150.55,
+      "occurredAt": "2026-04-09T00:00:00.000Z",
+      "detectedAt": "2026-04-09T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/tc-2026-000050-fsm",
+      "country": "FSM",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "887730c96bfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-tc-2026-000050-fsm",
+            "url": "https://reliefweb.int/disaster/tc-2026-000050-fsm",
+            "detectedAt": "2026-04-09T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-tc-2026-000053-fji",
+      "sourceType": "reliefweb",
+      "hazardType": "cyclone",
+      "title": "Tropical Cyclone Vaianu - Apr 2026",
+      "description": "Tropical Cyclone Vaianu affected Fiji between 7 and 8 April 2026, bringing heavy rainfall, strong winds, and widespread flooding. The system primarily impacted the Western Division, parts of Viti Levu, and maritime island communities. According to the National Emergency Operations Centre (NEOC) as of 8 April 2026, a total of 2,182 people (506 households) were displaced across 60 evacuation centers",
+      "lat": -17.71,
+      "lng": 178.07,
+      "occurredAt": "2026-04-06T00:00:00.000Z",
+      "detectedAt": "2026-04-06T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/tc-2026-000053-fji",
+      "country": "FJI",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "889b4c8929fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-tc-2026-000053-fji",
+            "url": "https://reliefweb.int/disaster/tc-2026-000053-fji",
+            "detectedAt": "2026-04-06T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-tc-2026-000051-slb",
+      "sourceType": "reliefweb",
+      "hazardType": "cyclone",
+      "title": "Tropical Cyclone Maila - Apr 2026",
+      "description": "Tropical Cyclone Maila intensified to a Category 3 system on 6 April in the Solomon Sea between Papua New Guinea and the Solomon Islands, with winds up to 185 km/h. The cyclone remains slow-moving with an uncertain track, increasing the risk of prolonged exposure. (ECHO, 6 Apr 2026)",
+      "lat": -9.65,
+      "lng": 160.16,
+      "occurredAt": "2026-04-06T00:00:00.000Z",
+      "detectedAt": "2026-04-06T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/tc-2026-000051-slb",
+      "country": "SLB",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "889edeb64bfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-tc-2026-000051-slb",
+            "url": "https://reliefweb.int/disaster/tc-2026-000051-slb",
+            "detectedAt": "2026-04-06T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-fl-2026-000044-yem",
+      "sourceType": "reliefweb",
+      "hazardType": "flood",
+      "title": "Yemen: Floods - Mar 2026",
+      "description": "[...] The rainy season in Yemen began earlier than usual, with initial low-intensity rainfall recorded starting from 20 March 2026. From 27 March 2026 onwards, rainfall intensified significantly, triggering severe flooding across Yemen and approximately more than ten governorates were affected, including Taiz (Al-Mokha), Al Jawf, Ibb, Abyan, Al Bayda, Lahj, Marib, Al Hodeidah, Hadramout, Aden, and",
+      "lat": 15.55,
+      "lng": 48.52,
+      "occurredAt": "2026-03-27T00:00:00.000Z",
+      "detectedAt": "2026-03-27T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/fl-2026-000044-yem",
+      "country": "YEM",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "8852531a2bfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-fl-2026-000044-yem",
+            "url": "https://reliefweb.int/disaster/fl-2026-000044-yem",
+            "detectedAt": "2026-03-27T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-ff-2026-000043-afg",
+      "sourceType": "reliefweb",
+      "hazardType": "flood",
+      "title": "Afghanistan: Floods - Mar 2026",
+      "description": "Since 25 March, multiple provinces of Afghanistan have been affected by heavy rains and resultant floods. The most affected provinces include Parwan, Maidan Wardak, Daikundi, Logar, Herat, Farah, Badghis, Ghor, Samangan, Sar-e Pol, Jawzjan, Faryab, and Laghman. As of 31 March, media reported 42 fatalities and 66 people injured. A total of 1,130 families are affected. 130 houses were destroyed, and",
+      "lat": 33.94,
+      "lng": 67.71,
+      "occurredAt": "2026-03-25T00:00:00.000Z",
+      "detectedAt": "2026-03-25T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/ff-2026-000043-afg",
+      "country": "AFG",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "88434b2113fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-ff-2026-000043-afg",
+            "url": "https://reliefweb.int/disaster/ff-2026-000043-afg",
+            "detectedAt": "2026-03-25T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-fl-2026-000033-eth",
+      "sourceType": "reliefweb",
+      "hazardType": "flood",
+      "title": "Ethiopia: Floods and Landslides - Mar 2026",
+      "description": "Torrential rains in the Gammo Zone in South Ethiopia Regional State caused flooding and landslides on 10 March 2026, affecting 11 villages, claiming at least 96 lives, and destroying property in 780 households. Altogether, around 1,950 households were affected, and all villages reported displaced populations, now sheltering in churches and public spaces. The worst-hit areas were Mazo Doisa, Kuyile",
+      "lat": 9.15,
+      "lng": 40.49,
+      "occurredAt": "2026-03-10T00:00:00.000Z",
+      "detectedAt": "2026-03-10T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/fl-2026-000033-eth",
+      "country": "ETH",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "887ad9d8c7fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-fl-2026-000033-eth",
+            "url": "https://reliefweb.int/disaster/fl-2026-000033-eth",
+            "detectedAt": "2026-03-10T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-fl-2026-000069-ken",
+      "sourceType": "reliefweb",
+      "hazardType": "flood",
+      "title": "Kenya: Floods - Mar 2026",
+      "description": "From 21-22 April, severe thunderstorms, heavy rain and strong winds battered Mombasa and Kwale counties in south‑east Kenya, triggering localised flooding, displacing residents, damaging homes and disrupting essential infrastructure. In Mombasa county, media reports dated 22 April indicated that over 100 households were displaced, with extensive damage to dwellings. Flash floods blocked transport ",
+      "lat": -0.02,
+      "lng": 37.91,
+      "occurredAt": "2026-03-06T00:00:00.000Z",
+      "detectedAt": "2026-03-06T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/fl-2026-000069-ken",
+      "country": "KEN",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "887a4098edfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-fl-2026-000069-ken",
+            "url": "https://reliefweb.int/disaster/fl-2026-000069-ken",
+            "detectedAt": "2026-03-06T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-tc-2026-000009-mdg",
+      "sourceType": "reliefweb",
+      "hazardType": "cyclone",
+      "title": "Tropical Cyclone Fytia - Jan 2026",
+      "description": "Tropical Cyclone Fytia developed over the Mozambique Channel on 28 January and intensified as it tracked eastwards toward Madagascar. The cyclone made landfall on 31 January in some of the country’s most remote areas, which are rarely affected by humanitarian crises. As it approached and crossed the western coast, forecasts indicated heavy rainfall, strong winds and rough seas across large parts o",
+      "lat": -18.77,
+      "lng": 46.87,
+      "occurredAt": "2026-02-28T00:00:00.000Z",
+      "detectedAt": "2026-02-28T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/tc-2026-000009-mdg",
+      "country": "MDG",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "88a23096bbfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-tc-2026-000009-mdg",
+            "url": "https://reliefweb.int/disaster/tc-2026-000009-mdg",
+            "detectedAt": "2026-02-28T00:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "reliefweb-fl-2026-000028-bra",
+      "sourceType": "reliefweb",
+      "hazardType": "flood",
+      "title": "Brazil: Floods - Feb 2026",
+      "description": "After the very heavy rainfall, floods, flash floods and landslides that have affected southern Brazil since 23 February, the humanitarian impact has increased. The affected states are Minas Gerais (the worst affected) and the neighbouring states of Rio de Janeiro and Sao Paulo. The federal government reports, as of 2 March, 70 fatalities, of whom 64 are across the Juiz de Fora municipality and six",
+      "lat": -14.24,
+      "lng": -51.93,
+      "occurredAt": "2026-02-23T00:00:00.000Z",
+      "detectedAt": "2026-02-23T00:00:00.000Z",
+      "url": "https://reliefweb.int/disaster/fl-2026-000028-bra",
+      "country": "BRA",
+      "trustScore": {
+        "sourceIntegrity": 35,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 8,
+        "total": 65
+      },
+      "h3Cell": "88a8c8a26dfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "reliefweb",
+            "eventId": "reliefweb-fl-2026-000028-bra",
+            "url": "https://reliefweb.int/disaster/fl-2026-000028-bra",
+            "detectedAt": "2026-02-23T00:00:00.000Z"
+          }
+        ]
+      }
+    }
+  ]
+}
