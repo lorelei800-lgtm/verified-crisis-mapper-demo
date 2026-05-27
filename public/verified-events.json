@@ -1,7 +1,73 @@
 {
-  "generatedAt": "2026-05-27T14:32:57.418Z",
-  "eventCount": 43,
+  "generatedAt": "2026-05-27T18:06:51.977Z",
+  "eventCount": 50,
   "events": [
+    {
+      "eventId": "gdacs-EQ-1542829",
+      "sourceType": "gdacs",
+      "hazardType": "earthquake",
+      "title": "Green earthquake (Magnitude 6M, Depth:10km) in Western Indian-Antarctic Ridge 27/05/2026 15:01 UTC, [unknown].",
+      "description": "On 5/27/2026 3:01:11 PM, an earthquake occurred in Western Indian-Antarctic Ridge potentially affecting [unknown]. The earthquake had Magnitude 6M, Depth:10km.",
+      "lat": -50.5213,
+      "lng": 139.3037,
+      "occurredAt": "2026-05-27T15:01:11.000Z",
+      "detectedAt": "2026-05-27T15:20:31.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542829",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88d8306c8bfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-EQ-1542829",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542829",
+            "detectedAt": "2026-05-27T15:20:31.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-EQ-1542825",
+      "sourceType": "gdacs",
+      "hazardType": "earthquake",
+      "title": "Green earthquake (Magnitude 6M, Depth:10km) in Western Indian-Antarctic Ridge 27/05/2026 14:51 UTC, [unknown].",
+      "description": "On 5/27/2026 2:51:04 PM, an earthquake occurred in Western Indian-Antarctic Ridge potentially affecting [unknown]. The earthquake had Magnitude 6M, Depth:10km.",
+      "lat": -50.5174,
+      "lng": 139.3678,
+      "occurredAt": "2026-05-27T14:51:04.000Z",
+      "detectedAt": "2026-05-27T15:04:14.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542825",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88d8306c33fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-EQ-1542825",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542825",
+            "detectedAt": "2026-05-27T15:04:14.000Z"
+          }
+        ]
+      }
+    },
     {
       "eventId": "gdacs-TC-1001272",
       "sourceType": "gdacs",
@@ -139,6 +205,40 @@
       }
     },
     {
+      "eventId": "gdacs-FL-1103909",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Georgia",
+      "description": "On 24/05/2026, a flood started in Georgia, lasting until 26/05/2026 (last update). The flood caused 0 deaths and 3 displaced .",
+      "lat": 41.6875091,
+      "lng": 44.8422377,
+      "occurredAt": "2026-05-24T01:00:00.000Z",
+      "detectedAt": "2026-05-27T15:09:14.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103909",
+      "country": "GEO",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "882c2aa917fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103909",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103909",
+            "detectedAt": "2026-05-27T15:09:14.000Z"
+          }
+        ]
+      }
+    },
+    {
       "eventId": "gdacs-EQ-1542057",
       "sourceType": "gdacs",
       "hazardType": "earthquake",
@@ -201,40 +301,6 @@
             "eventId": "gdacs-EQ-1542046",
             "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542046",
             "detectedAt": "2026-05-23T06:00:52.000Z"
-          }
-        ]
-      }
-    },
-    {
-      "eventId": "gdacs-FL-1103896",
-      "sourceType": "gdacs",
-      "hazardType": "flood",
-      "title": "Green flood alert in Vietnam",
-      "description": "On 23/05/2026, a flood started in Vietnam, lasting until 25/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
-      "lat": 11.6614957,
-      "lng": 108.1335279,
-      "occurredAt": "2026-05-23T01:00:00.000Z",
-      "detectedAt": "2026-05-27T13:34:55.000Z",
-      "severity": "green",
-      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103896",
-      "country": "VNM",
-      "trustScore": {
-        "sourceIntegrity": 38,
-        "geospatial": 22,
-        "crossSource": 0,
-        "metadata": 9,
-        "total": 69
-      },
-      "h3Cell": "8865b632cbfffff",
-      "isFused": false,
-      "sourceCount": 1,
-      "lineage": {
-        "fusedFrom": [
-          {
-            "sourceType": "gdacs",
-            "eventId": "gdacs-FL-1103896",
-            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103896",
-            "detectedAt": "2026-05-27T13:34:55.000Z"
           }
         ]
       }
@@ -303,6 +369,74 @@
             "eventId": "gdacs-FL-1103895",
             "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103895",
             "detectedAt": "2026-05-27T08:55:38.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103908",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Romania",
+      "description": "On 22/05/2026, a flood started in Romania, lasting until 24/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "lat": 44.69891,
+      "lng": 23.683459,
+      "occurredAt": "2026-05-22T01:00:00.000Z",
+      "detectedAt": "2026-05-27T15:08:43.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103908",
+      "country": "ROU",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "881ee392e9fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103908",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103908",
+            "detectedAt": "2026-05-27T15:08:43.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103907",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Japan",
+      "description": "On 22/05/2026, a flood started in Japan, lasting until 23/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "lat": 26.3324313,
+      "lng": 127.7903201,
+      "occurredAt": "2026-05-22T01:00:00.000Z",
+      "detectedAt": "2026-05-27T15:08:29.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103907",
+      "country": "JPN",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "884a261133fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103907",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103907",
+            "detectedAt": "2026-05-27T15:08:29.000Z"
           }
         ]
       }
@@ -410,6 +544,74 @@
       }
     },
     {
+      "eventId": "gdacs-FL-1103896",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Vietnam",
+      "description": "On 23/05/2026, a flood started in Vietnam, lasting until 25/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "lat": 22.7426936,
+      "lng": 106.1060926,
+      "occurredAt": "2026-05-15T01:00:00.000Z",
+      "detectedAt": "2026-05-27T13:34:55.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103896",
+      "country": "VNM",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "88415e28c9fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103896",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103896",
+            "detectedAt": "2026-05-27T13:34:55.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "gdacs-FL-1103883",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in China",
+      "description": "On 15/05/2026, a flood started in China, lasting until 19/05/2026 (last update). The flood caused 8 deaths and 18542 displaced .",
+      "lat": 29.29285,
+      "lng": 105.870081,
+      "occurredAt": "2026-05-15T01:00:00.000Z",
+      "detectedAt": "2026-05-17T09:35:32.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103883",
+      "country": "CHN",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "8840e45027fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103883",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103883",
+            "detectedAt": "2026-05-17T09:35:32.000Z"
+          }
+        ]
+      }
+    },
+    {
       "eventId": "gdacs-FL-1103880",
       "sourceType": "gdacs",
       "hazardType": "flood",
@@ -484,13 +686,47 @@
       }
     },
     {
+      "eventId": "gdacs-FL-1103900",
+      "sourceType": "gdacs",
+      "hazardType": "flood",
+      "title": "Green flood alert in Sri Lanka",
+      "description": "On 08/05/2026, a flood started in Sri Lanka, lasting until 17/05/2026 (last update). The flood caused 0 deaths and 1264 displaced .",
+      "lat": 6.5795685,
+      "lng": 80.588223,
+      "occurredAt": "2026-05-08T01:00:00.000Z",
+      "detectedAt": "2026-05-27T15:03:35.000Z",
+      "severity": "green",
+      "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103900",
+      "country": "LKA",
+      "trustScore": {
+        "sourceIntegrity": 38,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 69
+      },
+      "h3Cell": "886102058dfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "gdacs",
+            "eventId": "gdacs-FL-1103900",
+            "url": "https://www.gdacs.org/report.aspx?eventtype=FL&eventid=1103900",
+            "detectedAt": "2026-05-27T15:03:35.000Z"
+          }
+        ]
+      }
+    },
+    {
       "eventId": "gdacs-FL-1103845",
       "sourceType": "gdacs",
       "hazardType": "flood",
       "title": "Green flood alert in Türkiye",
       "description": "On 20/04/2026, a flood started in Türkiye, lasting until 26/05/2026 (last update). The flood caused 1 deaths and 90 displaced .",
-      "lat": 41.2537754,
-      "lng": 32.6669335,
+      "lat": 36.2123233,
+      "lng": 36.1764611,
       "occurredAt": "2026-04-20T01:00:00.000Z",
       "detectedAt": "2026-04-22T09:24:38.000Z",
       "severity": "green",
@@ -503,7 +739,7 @@
         "metadata": 9,
         "total": 69
       },
-      "h3Cell": "882d04cdc5fffff",
+      "h3Cell": "882da16609fffff",
       "isFused": false,
       "sourceCount": 1,
       "lineage": {
