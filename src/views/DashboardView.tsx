@@ -503,17 +503,24 @@ export default function DashboardView({
       },
     })
 
-    // ── Tap / click via MapLibre's own `click` event ────────────────────
-    // Earlier we used raw canvas pointerdown/pointerup, but those did not fire
-    // on the user's mobile browser (even an empty-map tap placed no pin), so
-    // pins were unselectable. MapLibre's own `click` event normalizes touch →
-    // click internally and fires reliably across mouse and touch, providing a
-    // ready-made screen point (`e.point`) and `e.lngLat`. We hit-test by
-    // projecting each visible event to screen coords and selecting the nearest
-    // within a finger-friendly radius — independent of symbol-layer querying.
-    const HIT_PX = 26   // generous radius; comfortable for both touch and mouse
-    const onMapClick = (e: maplibregl.MapMouseEvent) => {
-      const { x, y } = e.point
+    // ── Tap / click handling (belt-and-suspenders) ──────────────────────
+    // We feed BOTH MapLibre's own `click` event AND a raw canvas pointerup
+    // into one handler, deduped by a short time guard. Rationale: on the
+    // user's mobile browser the raw pointer path had historically placed an
+    // empty-map pin (so it fires there), while the symbol-layer query was the
+    // unreliable bit; we therefore hit-test purely by projecting each visible
+    // event to screen coords and picking the nearest within a finger-friendly
+    // radius. Whichever event fires first wins; the other is ignored.
+    const HIT_PX = 26
+    const canvas = map.getCanvas()
+    let lastHandled = 0
+    let ptrStartX = 0, ptrStartY = 0
+
+    // x,y are screen pixels relative to the map; lng/lat for the empty-tap pin.
+    const handleTap = (x: number, y: number, lat: number, lng: number) => {
+      const now = Date.now()
+      if (now - lastHandled < 350) return   // dedupe across the two sources
+      lastHandled = now
 
       // 1) Verified webhook events (rendered on top) — nearest within HIT_PX.
       let bestV: FusedEvent | null = null
@@ -524,10 +531,8 @@ export default function DashboardView({
         if (d < bestVD) { bestVD = d; bestV = v }
       }
       if (bestV && bestVD <= HIT_PX) {
-        setSelectedVerified(bestV)
-        setSelectedReport(null)
-        setMobileListOpen(false)
-        setMapReportPin(null)
+        setSelectedVerified(bestV); setSelectedReport(null)
+        setMobileListOpen(false); setMapReportPin(null)
         return
       }
 
@@ -540,29 +545,49 @@ export default function DashboardView({
         if (d < bestRD) { bestRD = d; bestR = r }
       }
       if (bestR && bestRD <= HIT_PX) {
-        setSelectedReport(bestR)
-        setSelectedVerified(null)
-        setMobileListOpen(false)
-        setMapReportPin(null)
+        setSelectedReport(bestR); setSelectedVerified(null)
+        setMobileListOpen(false); setMapReportPin(null)
         return
       }
 
       // 3) Empty map → drop a new-report pin.
-      setMapReportPin({ lat: e.lngLat.lat, lng: e.lngLat.lng })
-      setSelectedReport(null)
-      setSelectedVerified(null)
-      setMobileListOpen(false)
+      setMapReportPin({ lat, lng })
+      setSelectedReport(null); setSelectedVerified(null); setMobileListOpen(false)
+    }
+
+    // Source A — MapLibre's normalized click (mouse + touch).
+    const onMapClick = (e: maplibregl.MapMouseEvent) => {
+      handleTap(e.point.x, e.point.y, e.lngLat.lat, e.lngLat.lng)
     }
     map.on('click', onMapClick)
+
+    // Source B — raw canvas pointer events (fallback that historically fired
+    // on this device). pointerdown records the start so we can reject drags.
+    const onPtrDown = (e: PointerEvent) => { ptrStartX = e.clientX; ptrStartY = e.clientY }
+    const onPtrUp = (e: PointerEvent) => {
+      const dx = e.clientX - ptrStartX
+      const dy = e.clientY - ptrStartY
+      if (dx * dx + dy * dy > 225) return   // moved >15px → was a pan, not a tap
+      const rect = canvas.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      const ll = map.unproject([x, y])
+      handleTap(x, y, ll.lat, ll.lng)
+    }
+    canvas.addEventListener('pointerdown', onPtrDown)
+    canvas.addEventListener('pointerup', onPtrUp)
 
     map.on('mouseenter', 'points', () => { map.getCanvas().style.cursor = 'pointer' })
     map.on('mouseleave', 'points', () => { map.getCanvas().style.cursor = 'crosshair' })
 
-    // Remove the click handler when the effect re-runs (filteredReports changes
-    // frequently) so handlers don't accumulate into duplicate firings.
-    return () => {
-      map.off('click', onMapClick)
-    }
+    // No cleanup function on purpose. This effect's body uses an early return
+    // at the top when the 'reports' source already exists (subsequent renders
+    // only call src.setData), so the tap handlers are wired ONCE here on the
+    // first run. Returning a cleanup function would tear them down on every
+    // re-render, after which the early-return path would skip re-attaching —
+    // a regression that left every tap unhandled on mobile. Handlers reference
+    // the latest data via verifiedRef / filteredReportsRef, so they don't need
+    // to be re-bound when the inputs change.
   }, [filteredReports, mapReady, reviewMap]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Verified-events symbol layer ─────────────────────────────────────────
