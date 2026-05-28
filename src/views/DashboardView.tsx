@@ -168,9 +168,6 @@ export default function DashboardView({
   const [isPullRefreshing, setIsPullRefreshing] = useState(false)
   /** Coordinates of a map-click pin — shown as "Report here?" strip until dismissed */
   const [mapReportPin, setMapReportPin] = useState<{ lat: number; lng: number } | null>(null)
-  // TEMP diagnostic — visible counter so we can see on the phone which tap
-  // events actually fire. Remove once mobile tap routing is verified.
-  const [tapDebug, setTapDebug] = useState({ click: 0, ptrup: 0, hit: 0, last: '', branch: '' })
 
   // ── Data ──────────────────────────────────────────────────────────────────
   const baseReports = useMemo((): DamageReport[] => {
@@ -530,7 +527,6 @@ export default function DashboardView({
       const now = Date.now()
       if (now - lastHandled < 350) return
       lastHandled = now
-      setTapDebug(d => ({ ...d, hit: d.hit + 1, last: `${Math.round(x)},${Math.round(y)}` }))
 
       let bestV: FusedEvent | null = null
       let bestVD = Infinity
@@ -540,7 +536,6 @@ export default function DashboardView({
         if (d < bestVD) { bestVD = d; bestV = v }
       }
       if (bestV && bestVD <= HIT_PX) {
-        setTapDebug(d => ({ ...d, branch: `V@${Math.round(bestVD)}px` }))
         setSelectedVerified(bestV); setSelectedReport(null)
         setMobileListOpen(false); setMapReportPin(null)
         return
@@ -554,24 +549,20 @@ export default function DashboardView({
         if (d < bestRD) { bestRD = d; bestR = r }
       }
       if (bestR && bestRD <= HIT_PX) {
-        setTapDebug(d => ({ ...d, branch: `R@${Math.round(bestRD)}px` }))
         setSelectedReport(bestR); setSelectedVerified(null)
         setMobileListOpen(false); setMapReportPin(null)
         return
       }
 
-      setTapDebug(d => ({ ...d, branch: `PIN ${lat.toFixed(3)},${lng.toFixed(3)}` }))
       setMapReportPin({ lat, lng })
       setSelectedReport(null); setSelectedVerified(null); setMobileListOpen(false)
     }
 
     const onMapClick = (e: maplibregl.MapMouseEvent) => {
-      setTapDebug(d => ({ ...d, click: d.click + 1 }))
       handleTap(e.point.x, e.point.y, e.lngLat.lat, e.lngLat.lng)
     }
     const onPtrDown = (e: PointerEvent) => { ptrStartX = e.clientX; ptrStartY = e.clientY }
     const onPtrUp = (e: PointerEvent) => {
-      setTapDebug(d => ({ ...d, ptrup: d.ptrup + 1 }))
       const dx = e.clientX - ptrStartX
       const dy = e.clientY - ptrStartY
       if (dx * dx + dy * dy > 225) return
@@ -682,16 +673,6 @@ export default function DashboardView({
   // ── Render ────────────────────────────────────────────────────────────────
   return (
     <div className="flex-1 flex flex-col lg:flex-row" style={{ minHeight: 0 }}>
-      {/* TEMP diagnostic overlay — shows which tap events fire on this device.
-          Remove once mobile tap routing is verified. */}
-      <div style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999,
-        background: 'rgba(0,0,0,0.78)', color: '#fff',
-        font: '11px ui-monospace,Menlo,monospace', textAlign: 'center',
-        padding: '3px 6px', pointerEvents: 'none',
-      }}>
-        click:{tapDebug.click} ptrup:{tapDebug.ptrup} hit:{tapDebug.hit} | {tapDebug.branch || '—'} | pin:{mapReportPin ? 'Y' : '-'} V:{selectedVerified ? 'Y' : '-'} R:{selectedReport ? 'Y' : '-'}
-      </div>
 
       {/* ════════════ DESKTOP SIDEBAR ════════════════════════════════════════ */}
       <div className="hidden lg:flex lg:w-80 bg-white border-r border-gray-200 flex-col overflow-hidden">
