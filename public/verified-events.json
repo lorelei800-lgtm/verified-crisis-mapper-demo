@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T22:46:54.505Z",
+  "generatedAt": "2026-05-28T00:07:21.842Z",
   "eventCount": 44,
   "events": [
     {
@@ -413,7 +413,7 @@
       "sourceType": "gdacs",
       "hazardType": "flood",
       "title": "Green flood alert in China",
-      "description": "On 15/05/2026, a flood started in China, lasting until 19/05/2026 (last update). The flood caused 8 deaths and 18542 displaced .",
+      "description": "On 15/05/2026, a flood started in China, lasting until 26/05/2026 (last update). The flood caused 18 deaths and 22912 displaced .",
       "lat": 29.29285,
       "lng": 105.870081,
       "occurredAt": "2026-05-15T01:00:00.000Z",
@@ -447,7 +447,7 @@
       "sourceType": "gdacs",
       "hazardType": "flood",
       "title": "Green flood alert in Vietnam",
-      "description": "On 23/05/2026, a flood started in Vietnam, lasting until 25/05/2026 (last update). The flood caused 0 deaths and 0 displaced .",
+      "description": "On 15/05/2026, a flood started in Vietnam, lasting until 25/05/2026 (last update). The flood caused 0 deaths and 116 displaced .",
       "lat": 22.7426936,
       "lng": 106.1060926,
       "occurredAt": "2026-05-15T01:00:00.000Z",
@@ -521,7 +521,7 @@
       "sourceType": "gdacs",
       "hazardType": "flood",
       "title": "Green flood alert in Türkiye",
-      "description": "On 20/04/2026, a flood started in Türkiye, lasting until 26/05/2026 (last update). The flood caused 1 deaths and 90 displaced .",
+      "description": "On 20/04/2026, a flood started in Türkiye, lasting until 26/05/2026 (last update). The flood caused 3 deaths and 98 displaced .",
       "lat": 36.2123233,
       "lng": 36.1764611,
       "occurredAt": "2026-04-20T01:00:00.000Z",
