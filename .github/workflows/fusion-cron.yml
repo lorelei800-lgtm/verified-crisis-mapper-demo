@@ -8,8 +8,12 @@ name: Refresh verified-events.json (fusion cron)
 # All three source APIs are unauthenticated. No secrets are required.
 
 on:
-  schedule:
-    - cron: '7 * * * *'
+  # Hourly schedule paused while the repo is private (free-plan Pages is
+  # disabled when private, so an auto push→deploy would fail every hour).
+  # Re-enable by uncommenting the cron when the repo is made public again
+  # for submission. Manual runs remain available via workflow_dispatch.
+  # schedule:
+  #   - cron: '7 * * * *'
   workflow_dispatch:
 
 permissions:
