@@ -1263,6 +1263,78 @@ export default function DashboardView({
           </div>
         )}
 
+        {/* ── Mobile: selected verified-event bottom sheet ── */}
+        {selectedVerified && !selectedReport && (
+          <div className="lg:hidden absolute bottom-0 left-0 right-0 z-30 bg-white rounded-t-2xl shadow-2xl overflow-hidden" style={{maxHeight:'72%'}}>
+            <div className="px-4 py-3 flex items-center justify-between bg-blue-50">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="w-8 h-8 rounded-full bg-blue-600 text-white text-sm font-bold flex items-center justify-center shrink-0">
+                  {selectedVerified.trustScore.total}
+                </div>
+                <div className="min-w-0">
+                  <div className="text-sm font-bold text-blue-900 truncate">
+                    {selectedVerified.sourceType.toUpperCase()} · {selectedVerified.hazardType}
+                  </div>
+                  {selectedVerified.isFused && (
+                    <div className="text-[10px] font-bold text-blue-700">
+                      {selectedVerified.sourceCount}× fused
+                    </div>
+                  )}
+                </div>
+              </div>
+              <button onClick={() => setSelectedVerified(null)}
+                className="w-8 h-8 rounded-full bg-white bg-opacity-40 flex items-center justify-center text-gray-600 text-sm shrink-0">✕</button>
+            </div>
+            <div className="overflow-y-auto" style={{maxHeight:'calc(72vh - 60px)'}}>
+              <SourceHero
+                sourceType={selectedVerified.sourceType}
+                hazardType={selectedVerified.hazardType}
+                url={selectedVerified.url}
+              />
+              <div className="p-4 space-y-2 text-sm">
+                <div className="font-medium text-gray-800 leading-snug">{selectedVerified.title}</div>
+                {selectedVerified.description && (
+                  <p className="text-xs text-gray-500 leading-relaxed break-words">{selectedVerified.description}</p>
+                )}
+                <InfoRow label="When"    value={formatDate(selectedVerified.occurredAt)} />
+                <InfoRow label="Country" value={selectedVerified.country ?? '—'} />
+                {selectedVerified.severity && (
+                  <InfoRow label="Severity" value={selectedVerified.severity.toUpperCase()} />
+                )}
+                <div className="pt-1">
+                  <div className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Lineage</div>
+                  <ul className="space-y-1">
+                    {selectedVerified.lineage.fusedFrom.map((f, i) => (
+                      <li key={f.eventId + i} className="flex items-center justify-between gap-2">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 shrink-0">
+                          {f.sourceType}
+                        </span>
+                        <span className="text-[10px] text-gray-400 font-mono truncate flex-1" title={f.eventId}>{f.eventId}</span>
+                        {f.url && (
+                          <a href={f.url} target="_blank" rel="noopener noreferrer"
+                            className="text-[10px] text-blue-600 underline shrink-0">view ↗</a>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="pt-2 space-y-1">
+                  <MiniBar label="Source" value={selectedVerified.trustScore.sourceIntegrity} max={40} color="#1d4ed8"/>
+                  <MiniBar label="Geo"    value={selectedVerified.trustScore.geospatial}      max={30} color="#1d4ed8"/>
+                  <MiniBar label="Cross"  value={selectedVerified.trustScore.crossSource}     max={20} color="#1d4ed8"/>
+                  <MiniBar label="Meta"   value={selectedVerified.trustScore.metadata}        max={10} color="#1d4ed8"/>
+                </div>
+                {selectedVerified.url && (
+                  <a href={selectedVerified.url} target="_blank" rel="noopener noreferrer"
+                    className="block text-center mt-3 px-3 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold">
+                    View original source ↗
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* ── Map report pin strip — desktop card + mobile full-width ── */}
         {mapReportPin && !selectedReport && (
           <>
@@ -1285,8 +1357,10 @@ export default function DashboardView({
               <button onClick={() => setMapReportPin(null)}
                 className="shrink-0 w-6 h-6 flex items-center justify-center text-gray-300 hover:text-gray-600 text-sm">✕</button>
             </div>
-            {/* Mobile: full-width strip at bottom */}
-            <div className="lg:hidden absolute bottom-0 left-0 right-0 z-30 bg-white border-t-2 border-blue-300 shadow-2xl p-3 flex items-center gap-3">
+            {/* Mobile: full-width strip sitting just above the App's bottom nav
+                (nav is ~56–60px tall and `fixed bottom-0 z-50`, so an absolute
+                strip at bottom-0 here would be mostly hidden behind it). */}
+            <div className="lg:hidden absolute bottom-16 left-0 right-0 z-30 bg-white border-t-2 border-b border-blue-300 shadow-2xl p-3 flex items-center gap-3">
               <div className="w-10 h-10 shrink-0 rounded-full bg-blue-50 border-2 border-blue-300 flex items-center justify-center text-lg select-none">📍</div>
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-bold text-gray-800">Report damage here?</div>
