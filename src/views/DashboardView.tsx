@@ -20,8 +20,12 @@ const VERIFIED_SOURCE_META: ReadonlyArray<{
   tooltip: string
 }> = [
   { key: 'gdacs',      label: 'GDACS',      tooltip: 'GDACS — UN OCHA + EU JRC global alerts: earthquakes, tsunamis, cyclones, floods, volcanoes, droughts, wildfires.' },
-  { key: 'copernicus', label: 'Copernicus', tooltip: 'Copernicus EMS — European Commission satellite-derived disaster extent maps.' },
   { key: 'reliefweb',  label: 'ReliefWeb',  tooltip: 'ReliefWeb — UN OCHA humanitarian situation reports.' },
+  // Copernicus EMS removed as a source: it has no public API, so its entries
+  // were a curated snapshot whose per-activation links did not resolve. GDACS
+  // and ReliefWeb are real, live RSS feeds — keeping only them makes the
+  // multi-source story fully verifiable. The 'copernicus' SourceType is kept
+  // in the type/sprite maps for compatibility but no events are produced.
 ]
 
 /**
@@ -163,8 +167,6 @@ export default function DashboardView({
   const [isPullRefreshing, setIsPullRefreshing] = useState(false)
   /** Coordinates of a map-click pin — shown as "Report here?" strip until dismissed */
   const [mapReportPin, setMapReportPin] = useState<{ lat: number; lng: number } | null>(null)
-  /** True when a layer-specific click (cluster/point) consumed the current click — prevents empty-area handler from also firing */
-  const mapTapConsumedRef = useRef(false)
 
   // ── Data ──────────────────────────────────────────────────────────────────
   const baseReports = useMemo((): DamageReport[] => {
@@ -511,12 +513,17 @@ export default function DashboardView({
     // layer-click handlers set layerConsumed before we decide to place a pin.
     const canvas = map.getCanvas()
     let ptrStartX = 0, ptrStartY = 0
-    let layerConsumed = false
 
     const onPtrDown = (e: PointerEvent) => {
       ptrStartX = e.clientX
       ptrStartY = e.clientY
     }
+    // All tap/click routing happens synchronously here, hit-testing the WebGL
+    // layers via queryRenderedFeatures on the native PointerEvent. This is the
+    // reliable path for touch on Android Chrome, where MapLibre's own
+    // layer-click on a *symbol* layer (verified events) was not firing — so
+    // webhook pins (GDACS etc.) could not be opened on mobile. Order: verified
+    // symbols first (rendered on top), then citizen points, else drop a pin.
     const onPtrUp = (e: PointerEvent) => {
       const dx = e.clientX - ptrStartX
       const dy = e.clientY - ptrStartY
@@ -524,41 +531,55 @@ export default function DashboardView({
       // 5 px for mouse pointer.
       const tol = e.pointerType === 'touch' ? 225 : 25
       if (dx * dx + dy * dy > tol) return   // was a drag / pan
-      const rect  = canvas.getBoundingClientRect()
-      const lngLat = map.unproject([e.clientX - rect.left, e.clientY - rect.top])
-      layerConsumed = false                  // reset — layer handler may set true within 50 ms
-      setTimeout(() => {
-        if (layerConsumed || mapTapConsumedRef.current) {
-          mapTapConsumedRef.current = false
-          layerConsumed = false
-          return
+      const rect = canvas.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      // Forgiving hit box for fingers; tight for the mouse pointer.
+      const pad = e.pointerType === 'touch' ? 14 : 3
+      const box: [[number, number], [number, number]] =
+        [[x - pad, y - pad], [x + pad, y + pad]]
+
+      // 1) Verified webhook symbols (rendered on top of the citizen points)
+      if (map.getLayer('verified-symbols')) {
+        const vf = map.queryRenderedFeatures(box, { layers: ['verified-symbols'] })
+        if (vf.length) {
+          const id = vf[0].properties?.id as string
+          const event = verifiedRef.current.find(v => v.eventId === id)
+          if (event) {
+            setSelectedVerified(event)
+            setSelectedReport(null)
+            setMobileListOpen(false)
+            setMapReportPin(null)
+            return
+          }
         }
-        setMapReportPin({ lat: lngLat.lat, lng: lngLat.lng })
-        setSelectedReport(null)
-        setMobileListOpen(false)
-      }, 50)
+      }
+
+      // 2) Citizen report points
+      if (map.getLayer('points')) {
+        const pf = map.queryRenderedFeatures(box, { layers: ['points'] })
+        if (pf.length) {
+          const id = pf[0].properties?.id as string
+          const report = filteredReportsRef.current.find(r => r.id === id)
+          if (report) {
+            setSelectedReport(report)
+            setSelectedVerified(null)
+            setMobileListOpen(false)
+            setMapReportPin(null)
+            return
+          }
+        }
+      }
+
+      // 3) Empty map → drop a new-report pin
+      const lngLat = map.unproject([x, y])
+      setMapReportPin({ lat: lngLat.lat, lng: lngLat.lng })
+      setSelectedReport(null)
+      setSelectedVerified(null)
+      setMobileListOpen(false)
     }
     canvas.addEventListener('pointerdown', onPtrDown)
     canvas.addEventListener('pointerup',   onPtrUp)
-
-    map.on('click', 'points', (e) => {
-      mapTapConsumedRef.current = true   // mark consumed for the old click path
-      layerConsumed = true               // mark for pointerup timeout
-      const feats = map.queryRenderedFeatures(e.point, { layers: ['points'] })
-      if (!feats.length) return
-      const id = feats[0].properties!.id as string
-      const report = filteredReportsRef.current.find(r => r.id === id)
-      if (report) {
-        setSelectedReport(report)
-        setMobileListOpen(false)
-        setMapReportPin(null)
-      }
-    })
-
-    // Note: the general map.on('click', ...) is intentionally removed.
-    // Tap / click detection is handled by the native pointerdown/pointerup
-    // listeners on the canvas (see above).  This avoids MapLibre v4's
-    // PointerEvent↔TouchEvent mismatch on Android Chrome.
 
     map.on('mouseenter', 'points', () => { map.getCanvas().style.cursor = 'pointer' })
     map.on('mouseleave', 'points', () => { map.getCanvas().style.cursor = 'crosshair' })
@@ -638,24 +659,10 @@ export default function DashboardView({
       })
       map.on('mouseenter', 'verified-symbols', () => { map.getCanvas().style.cursor = 'pointer' })
       map.on('mouseleave', 'verified-symbols', () => { map.getCanvas().style.cursor = 'crosshair' })
-      // IMPORTANT: lookup via verifiedRef.current (refreshed every render),
-      // NOT the visibleVerifiedEvents closure. The layer + handler are
-      // registered once on first effect run, when the events array is
-      // still empty; subsequent re-renders only `setData()` the source.
-      // A direct closure capture here would always find() against [].
-      map.on('click', 'verified-symbols', e => {
-        const feature = e.features?.[0]
-        if (!feature) return
-        const id = feature.properties?.id as string
-        const event = verifiedRef.current.find(v => v.eventId === id)
-        if (!event) return
-        // Consume the click so the empty-area handler in App doesn't fire.
-        mapTapConsumedRef.current = true
-        setSelectedVerified(event)
-        setSelectedReport(null)
-        setMobileListOpen(false)
-        setMapReportPin(null)
-      })
+      // Tap/click on a verified symbol is handled in the canvas pointerup
+      // handler (see the points-layer effect), which hit-tests this layer via
+      // queryRenderedFeatures. MapLibre's own symbol-layer click did not fire
+      // for touch on Android Chrome, so webhook pins were unopenable on mobile.
     }
   }, [visibleVerifiedEvents, mapReady])
 
