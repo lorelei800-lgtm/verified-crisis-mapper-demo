@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-28T00:55:12.531Z",
-  "eventCount": 36,
+  "generatedAt": "2026-05-28T01:44:18.211Z",
+  "eventCount": 43,
   "events": [
     {
       "eventId": "gdacs-EQ-1542829",
@@ -118,13 +118,13 @@
       "trustScore": {
         "sourceIntegrity": 38,
         "geospatial": 22,
-        "crossSource": 0,
+        "crossSource": 12,
         "metadata": 9,
-        "total": 69
+        "total": 81
       },
       "h3Cell": "88b30b1b07fffff",
-      "isFused": false,
-      "sourceCount": 1,
+      "isFused": true,
+      "sourceCount": 2,
       "lineage": {
         "fusedFrom": [
           {
@@ -132,6 +132,12 @@
             "eventId": "gdacs-EQ-1542497",
             "url": "https://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1542497",
             "detectedAt": "2026-05-25T21:59:52.000Z"
+          },
+          {
+            "sourceType": "usgs",
+            "eventId": "usgs-us6000t04s",
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t04s",
+            "detectedAt": "2026-05-25T21:52:20.043Z"
           }
         ]
       }
@@ -880,6 +886,237 @@
             "eventId": "gdacs-DR-1016449",
             "url": "https://www.gdacs.org/report.aspx?eventtype=DR&eventid=1016449",
             "detectedAt": "2023-09-06T12:19:52.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "usgs-hv74966427",
+      "sourceType": "usgs",
+      "hazardType": "earthquake",
+      "title": "M 6.0 - 13 km S of Honaunau-Napoopoo, Hawaii",
+      "description": "13 km S of Honaunau-Napoopoo, Hawaii",
+      "lat": 19.3403333333333,
+      "lng": -155.8425,
+      "occurredAt": "2026-05-23T07:46:01.480Z",
+      "detectedAt": "2026-05-23T07:46:01.480Z",
+      "severity": "green",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74966427",
+      "trustScore": {
+        "sourceIntegrity": 39,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 70
+      },
+      "h3Cell": "885d13d0ebfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "usgs",
+            "eventId": "usgs-hv74966427",
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv74966427",
+            "detectedAt": "2026-05-23T07:46:01.480Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "usgs-us6000sz1d",
+      "sourceType": "usgs",
+      "hazardType": "earthquake",
+      "title": "M 6.6 - southern East Pacific Rise",
+      "description": "southern East Pacific Rise",
+      "lat": -55.984,
+      "lng": -122.2988,
+      "occurredAt": "2026-05-20T17:43:01.910Z",
+      "detectedAt": "2026-05-20T17:43:01.910Z",
+      "severity": "orange",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sz1d",
+      "trustScore": {
+        "sourceIntegrity": 39,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 70
+      },
+      "h3Cell": "88e2d4735bfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "usgs",
+            "eventId": "usgs-us6000sz1d",
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sz1d",
+            "detectedAt": "2026-05-20T17:43:01.910Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "usgs-us6000syik",
+      "sourceType": "usgs",
+      "hazardType": "earthquake",
+      "title": "M 5.1 - 24 km NW of Liuzhou, China",
+      "description": "24 km NW of Liuzhou, China",
+      "lat": 24.4992,
+      "lng": 109.2666,
+      "occurredAt": "2026-05-18T13:44:26.120Z",
+      "detectedAt": "2026-05-18T13:44:26.120Z",
+      "severity": "green",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syik",
+      "trustScore": {
+        "sourceIntegrity": 39,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 70
+      },
+      "h3Cell": "884023b6a1fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "usgs",
+            "eventId": "usgs-us6000syik",
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000syik",
+            "detectedAt": "2026-05-18T13:44:26.120Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "usgs-us6000sy84",
+      "sourceType": "usgs",
+      "hazardType": "earthquake",
+      "title": "M 6.0 - 60 km ESE of Codrington, Antigua and Barbuda",
+      "description": "60 km ESE of Codrington, Antigua and Barbuda",
+      "lat": 17.4295,
+      "lng": -61.2938,
+      "occurredAt": "2026-05-16T14:50:05.948Z",
+      "detectedAt": "2026-05-16T14:50:05.948Z",
+      "severity": "orange",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sy84",
+      "trustScore": {
+        "sourceIntegrity": 39,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 70
+      },
+      "h3Cell": "885e59d8c3fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "usgs",
+            "eventId": "usgs-us6000sy84",
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sy84",
+            "detectedAt": "2026-05-16T14:50:05.948Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "usgs-us6000sxwq",
+      "sourceType": "usgs",
+      "hazardType": "earthquake",
+      "title": "M 6.7 - 49 km ESE of Ōfunato, Japan",
+      "description": "49 km ESE of Ōfunato, Japan",
+      "lat": 38.9127,
+      "lng": 142.2498,
+      "occurredAt": "2026-05-15T11:22:01.649Z",
+      "detectedAt": "2026-05-15T11:22:01.649Z",
+      "severity": "orange",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxwq",
+      "trustScore": {
+        "sourceIntegrity": 39,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 70
+      },
+      "h3Cell": "882e01ba11fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "usgs",
+            "eventId": "usgs-us6000sxwq",
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000sxwq",
+            "detectedAt": "2026-05-15T11:22:01.649Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "usgs-ci41461608",
+      "sourceType": "usgs",
+      "hazardType": "earthquake",
+      "title": "M 4.7 - 3 km WSW of Brawley, CA",
+      "description": "3 km WSW of Brawley, CA",
+      "lat": 32.9713333333333,
+      "lng": -115.562333333333,
+      "occurredAt": "2026-05-10T07:10:21.250Z",
+      "detectedAt": "2026-05-10T07:10:21.250Z",
+      "severity": "green",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41461608",
+      "trustScore": {
+        "sourceIntegrity": 39,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 70
+      },
+      "h3Cell": "8829a6da07fffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "usgs",
+            "eventId": "usgs-ci41461608",
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41461608",
+            "detectedAt": "2026-05-10T07:10:21.250Z"
+          }
+        ]
+      }
+    },
+    {
+      "eventId": "usgs-nn00916980",
+      "sourceType": "usgs",
+      "hazardType": "earthquake",
+      "title": "M 5.2 - 19 km SE of Silver Springs, Nevada",
+      "description": "19 km SE of Silver Springs, Nevada",
+      "lat": 39.3066,
+      "lng": -119.0467,
+      "occurredAt": "2026-05-01T08:17:19.870Z",
+      "detectedAt": "2026-05-01T08:17:19.870Z",
+      "severity": "green",
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nn00916980",
+      "trustScore": {
+        "sourceIntegrity": 39,
+        "geospatial": 22,
+        "crossSource": 0,
+        "metadata": 9,
+        "total": 70
+      },
+      "h3Cell": "882988273bfffff",
+      "isFused": false,
+      "sourceCount": 1,
+      "lineage": {
+        "fusedFrom": [
+          {
+            "sourceType": "usgs",
+            "eventId": "usgs-nn00916980",
+            "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nn00916980",
+            "detectedAt": "2026-05-01T08:17:19.870Z"
           }
         ]
       }

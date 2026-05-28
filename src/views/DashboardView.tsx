@@ -20,6 +20,7 @@ const VERIFIED_SOURCE_META: ReadonlyArray<{
   tooltip: string
 }> = [
   { key: 'gdacs',      label: 'GDACS',      tooltip: 'GDACS — UN OCHA + EU JRC global alerts: earthquakes, tsunamis, cyclones, floods, volcanoes, droughts, wildfires.' },
+  { key: 'usgs',       label: 'USGS',       tooltip: 'USGS — U.S. Geological Survey authoritative earthquake feed. Cross-validates GDACS seismic alerts.' },
   { key: 'reliefweb',  label: 'ReliefWeb',  tooltip: 'ReliefWeb — UN OCHA humanitarian situation reports.' },
   // Copernicus EMS removed as a source: it has no public API, so its entries
   // were a curated snapshot whose per-activation links did not resolve. GDACS
@@ -139,7 +140,7 @@ export default function DashboardView({
   const [verifiedFilter, setVerifiedFilter] = useState<'show' | 'hide'>('show')
   /** Per-source toggles within the verified-events lane. */
   const [sourceFilter,   setSourceFilter]   = useState<Record<Exclude<SourceType, 'citizen'>, boolean>>({
-    gdacs: true, copernicus: true, reliefweb: true,
+    gdacs: true, usgs: true, copernicus: true, reliefweb: true,
   })
   const [verifiedEvents, setVerifiedEvents] = useState<FusedEvent[]>([])
   const [mapReady,       setMapReady]       = useState(false)
@@ -260,7 +261,7 @@ export default function DashboardView({
     if (verifiedFilter !== 'show') n += 1
     else {
       // each per-source chip that's been turned off counts as one active filter
-      for (const k of ['gdacs', 'copernicus', 'reliefweb'] as const) {
+      for (const k of ['gdacs', 'usgs', 'copernicus', 'reliefweb'] as const) {
         if (!sourceFilter[k]) n += 1
       }
     }
@@ -604,16 +605,17 @@ export default function DashboardView({
     // Per-source brand stroke colour, matching the SourceHero banner.
     const SOURCE_COLORS: Record<Exclude<SourceType, 'citizen'>, string> = {
       gdacs:      '#1d4ed8',
+      usgs:       '#7c3aed',  // violet-600 — distinct from GDACS blue
       copernicus: '#047857',  // emerald-700
       reliefweb:  '#c2410c',  // orange-700
     }
     const LETTERS: Record<Exclude<SourceType, 'citizen'>, string> = {
-      gdacs: 'G', copernicus: 'C', reliefweb: 'R',
+      gdacs: 'G', usgs: 'U', copernicus: 'C', reliefweb: 'R',
     }
 
     // Register sprites if not already there. Re-registering is allowed (it
     // updates the existing image), so this is safe to run on every effect.
-    for (const sourceType of ['gdacs', 'copernicus', 'reliefweb'] as const) {
+    for (const sourceType of ['gdacs', 'usgs', 'copernicus', 'reliefweb'] as const) {
       const color = SOURCE_COLORS[sourceType]
       const letter = LETTERS[sourceType]
       for (const fused of [false, true]) {
@@ -1483,6 +1485,7 @@ function SourceHero({ sourceType, hazardType, url }:
   }) {
   const theme =
     sourceType === 'gdacs'      ? { bg: 'from-blue-700 to-blue-900',      label: 'GDACS',          sublabel: 'UN OCHA + EU JRC' }
+    : sourceType === 'usgs'       ? { bg: 'from-violet-600 to-violet-900', label: 'USGS',           sublabel: 'U.S. Geological Survey' }
     : sourceType === 'copernicus' ? { bg: 'from-emerald-700 to-blue-800', label: 'Copernicus EMS', sublabel: 'European Commission' }
     : sourceType === 'reliefweb'  ? { bg: 'from-orange-600 to-red-700',   label: 'ReliefWeb',      sublabel: 'UN OCHA' }
     : { bg: 'from-gray-600 to-gray-800', label: 'Source', sublabel: '' }

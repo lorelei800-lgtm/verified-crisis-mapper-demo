@@ -20,6 +20,7 @@
 
 const SOURCE_INTEGRITY_PRIOR = {
   gdacs:      38,   // UN-affiliated, multi-hazard, signed RSS
+  usgs:       39,   // US Geological Survey — authoritative seismographic network
   copernicus: 38,   // European Commission, satellite-derived
   reliefweb:  35,   // OCHA-curated, but human-edited
   citizen:    20,   // dynamic; further adjusted per-report
@@ -27,6 +28,7 @@ const SOURCE_INTEGRITY_PRIOR = {
 
 const SOURCE_METADATA_PRIOR = {
   gdacs:      9,
+  usgs:       9,    // magnitude, depth, precise origin time
   copernicus: 9,
   reliefweb:  8,
   citizen:    5,    // dynamic; further adjusted per-report

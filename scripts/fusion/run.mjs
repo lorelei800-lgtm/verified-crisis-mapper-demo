@@ -21,10 +21,13 @@ import { writeFile, mkdir } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { fetchGdacs } from './sources/gdacs.mjs'
+import { fetchUsgs } from './sources/usgs.mjs'
 import { fetchReliefWeb } from './sources/reliefweb.mjs'
 // Copernicus EMS removed: no public API, so its entries were a curated
-// snapshot whose per-activation links did not resolve. We keep only the real,
-// live RSS feeds (GDACS + ReliefWeb) so the multi-source story is verifiable.
+// snapshot whose per-activation links did not resolve. We use only real, live
+// public feeds — GDACS (RSS), USGS (earthquake GeoJSON), ReliefWeb (RSS) — so
+// the multi-source story is fully verifiable. USGS overlaps GDACS on the same
+// large earthquakes, producing genuine cross-source validated events.
 import { dedupe } from './deduper.mjs'
 import { scoreAll } from './trustScoreV2.mjs'
 import { postEvents } from './post-to-cms.mjs'
@@ -42,7 +45,7 @@ const flags = {
 }
 
 if (flags.help) {
-  console.log(`Usage: node scripts/fusion/run.mjs [--dry-run] [--source=gdacs|reliefweb] [--out=<path>]`)
+  console.log(`Usage: node scripts/fusion/run.mjs [--dry-run] [--source=gdacs|usgs|reliefweb] [--out=<path>]`)
   process.exit(0)
 }
 
@@ -65,7 +68,7 @@ async function writeStaticJson (relPath, events) {
   console.log(`[fusion] wrote ${events.length} event(s) → ${relPath}`)
 }
 
-const VALID_SOURCES = ['gdacs', 'reliefweb']
+const VALID_SOURCES = ['gdacs', 'usgs', 'reliefweb']
 if (flags.source && !VALID_SOURCES.includes(flags.source)) {
   console.error(`[fusion] unknown source: ${flags.source}. Valid: ${VALID_SOURCES.join(', ')}`)
   process.exit(2)
@@ -90,6 +93,7 @@ async function main () {
   // Fetch in parallel (each is rate-friendly and independent).
   const tasks = []
   if (!flags.source || flags.source === 'gdacs')      tasks.push(safe('gdacs',      fetchGdacs))
+  if (!flags.source || flags.source === 'usgs')       tasks.push(safe('usgs',       fetchUsgs))
   if (!flags.source || flags.source === 'reliefweb')  tasks.push(safe('reliefweb',  fetchReliefWeb))
 
   const lists = await Promise.all(tasks)

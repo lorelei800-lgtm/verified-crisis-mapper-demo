@@ -24,6 +24,8 @@ import { latLngToCell } from 'h3-js'
 
 const H3_RES = 8                                // ≈ 0.74 km² hexagons
 const WINDOW_MS = 30 * 60 * 1000               // ±30min (stage 1)
+const NEAR_KM = 150                            // distance threshold (stage 1.5)
+const NEAR_WINDOW_MS = 60 * 60 * 1000          // ±60min (stage 1.5)
 const COUNTRY_WINDOW_MS = 7 * 24 * 60 * 60 * 1000 // ±7d (stage 2)
 
 /**
@@ -73,24 +75,34 @@ export function dedupe (events) {
     flush()
   }
 
+  // ── Stage 1.5: distance-based merge for precise-coordinate sources that
+  // ── report the SAME physical event at slightly different epicenters.
+  // ── e.g. GDACS and USGS both publish a large earthquake, but their epicenter
+  // ── solutions differ by a few km, so they land in different H3 res-8 cells
+  // ── and stage 1 misses them. Merge clusters within NEAR_KM + ±60min +
+  // ── compatible hazard, but ONLY across different sources (two GDACS quakes
+  // ── 100 km apart are distinct events; a GDACS + a USGS quake 20 km / 5 min
+  // ── apart is the same event seen by two agencies).
+  const stage15Clusters = mergeNearbyAcrossSources(stage1Clusters)
+
   // ── Stage 2: country + hazard + ±7d for any cluster that still has
   // ── room to merge with another (matches GDACS↔ReliefWeb pairs that
   // ── miss stage 1 because of country-centroid vs event-coords).
   /** @type {Array<typeof annotated>} */
   const stage2Clusters = []
   const consumed = new Set()
-  for (let i = 0; i < stage1Clusters.length; i++) {
+  for (let i = 0; i < stage15Clusters.length; i++) {
     if (consumed.has(i)) continue
-    const merged = [...stage1Clusters[i]]
+    const merged = [...stage15Clusters[i]]
     const baseCountry = pickCountry(merged)
     const baseHazard  = pickHazard(merged)
     const baseStart   = Date.parse(merged[0].occurredAt)
 
     if (baseCountry && baseHazard) {
       const baseSources = new Set(merged.map(e => e.sourceType))
-      for (let j = i + 1; j < stage1Clusters.length; j++) {
+      for (let j = i + 1; j < stage15Clusters.length; j++) {
         if (consumed.has(j)) continue
-        const other = stage1Clusters[j]
+        const other = stage15Clusters[j]
         const otherCountry = pickCountry(other)
         const otherHazard  = pickHazard(other)
         const otherStart   = Date.parse(other[0].occurredAt)
@@ -119,6 +131,62 @@ export function dedupe (events) {
   }
 
   return stage2Clusters.map(mergeCluster)
+}
+
+/**
+ * Stage 1.5 — merge stage-1 clusters that describe the same physical event but
+ * landed in different H3 cells (different agencies' epicenter solutions).
+ * Merge criteria: within NEAR_KM, within ±NEAR_WINDOW_MS, compatible hazard,
+ * and crucially across DIFFERENT sources only.
+ * @param {Array<any[]>} clusters
+ * @returns {Array<any[]>}
+ */
+function mergeNearbyAcrossSources (clusters) {
+  const out = []
+  const consumed = new Set()
+  for (let i = 0; i < clusters.length; i++) {
+    if (consumed.has(i)) continue
+    const merged = [...clusters[i]]
+    let sources = new Set(merged.map(e => e.sourceType))
+    const repA = merged[0]
+    const hazA = pickHazard(merged)
+    const startA = Date.parse(merged[0].occurredAt)
+    for (let j = i + 1; j < clusters.length; j++) {
+      if (consumed.has(j)) continue
+      const other = clusters[j]
+      const otherSources = new Set(other.map(e => e.sourceType))
+      // Different sources only — never merge two records from the same source.
+      if ([...sources].some(s => otherSources.has(s))) continue
+      const hazB = pickHazard(other)
+      const hazOk = hazA === hazB || hazA === 'other' || hazB === 'other'
+      if (!hazOk) continue
+      const repB = other[0]
+      const startB = Date.parse(other[0].occurredAt)
+      if (
+        haversineKm(repA.lat, repA.lng, repB.lat, repB.lng) <= NEAR_KM &&
+        Math.abs(startB - startA) <= NEAR_WINDOW_MS
+      ) {
+        merged.push(...other)
+        for (const s of otherSources) sources.add(s)
+        consumed.add(j)
+      }
+    }
+    consumed.add(i)
+    out.push(merged)
+  }
+  return out
+}
+
+/** Great-circle distance between two lat/lng points, in kilometres. */
+function haversineKm (lat1, lng1, lat2, lng2) {
+  const R = 6371
+  const toRad = d => (d * Math.PI) / 180
+  const dLat = toRad(lat2 - lat1)
+  const dLng = toRad(lng2 - lng1)
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2
+  return 2 * R * Math.asin(Math.sqrt(a))
 }
 
 function pickCountry (cluster) {

@@ -19,7 +19,7 @@
  */
 
 /** Where a piece of data came from. */
-export type SourceType = 'citizen' | 'gdacs' | 'copernicus' | 'reliefweb'
+export type SourceType = 'citizen' | 'gdacs' | 'usgs' | 'copernicus' | 'reliefweb'
 
 /**
  * What kind of disaster the event describes. Aligned with GDACS event-type
