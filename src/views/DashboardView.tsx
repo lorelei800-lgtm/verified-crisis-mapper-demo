@@ -535,40 +535,46 @@ export default function DashboardView({
       const rect = canvas.getBoundingClientRect()
       const x = e.clientX - rect.left
       const y = e.clientY - rect.top
-      // Forgiving hit box for fingers; tight for the mouse pointer.
-      const pad = e.pointerType === 'touch' ? 14 : 3
-      const box: [[number, number], [number, number]] =
-        [[x - pad, y - pad], [x + pad, y + pad]]
 
-      // 1) Verified webhook symbols (rendered on top of the citizen points)
-      if (map.getLayer('verified-symbols')) {
-        const vf = map.queryRenderedFeatures(box, { layers: ['verified-symbols'] })
-        if (vf.length) {
-          const id = vf[0].properties?.id as string
-          const event = verifiedRef.current.find(v => v.eventId === id)
-          if (event) {
-            setSelectedVerified(event)
-            setSelectedReport(null)
-            setMobileListOpen(false)
-            setMapReportPin(null)
-            return
-          }
+      // Finger-friendly hit radius (px). We hit-test by projecting each event's
+      // coordinate to the screen and measuring distance, rather than relying on
+      // queryRenderedFeatures against the symbol layer — that proved unreliable
+      // for touch on mobile. map.project() is exact and always available.
+      const HIT = e.pointerType === 'touch' ? 26 : 12
+
+      // 1) Verified webhook events (rendered on top) — nearest within HIT.
+      {
+        let best: FusedEvent | null = null
+        let bestD = Infinity
+        for (const v of verifiedRef.current) {
+          const p = map.project([v.lng, v.lat])
+          const d = Math.hypot(p.x - x, p.y - y)
+          if (d < bestD) { bestD = d; best = v }
+        }
+        if (best && bestD <= HIT) {
+          setSelectedVerified(best)
+          setSelectedReport(null)
+          setMobileListOpen(false)
+          setMapReportPin(null)
+          return
         }
       }
 
-      // 2) Citizen report points
-      if (map.getLayer('points')) {
-        const pf = map.queryRenderedFeatures(box, { layers: ['points'] })
-        if (pf.length) {
-          const id = pf[0].properties?.id as string
-          const report = filteredReportsRef.current.find(r => r.id === id)
-          if (report) {
-            setSelectedReport(report)
-            setSelectedVerified(null)
-            setMobileListOpen(false)
-            setMapReportPin(null)
-            return
-          }
+      // 2) Citizen report points — nearest within HIT.
+      {
+        let best: DamageReport | null = null
+        let bestD = Infinity
+        for (const r of filteredReportsRef.current) {
+          const p = map.project([r.lng, r.lat])
+          const d = Math.hypot(p.x - x, p.y - y)
+          if (d < bestD) { bestD = d; best = r }
+        }
+        if (best && bestD <= HIT) {
+          setSelectedReport(best)
+          setSelectedVerified(null)
+          setMobileListOpen(false)
+          setMapReportPin(null)
+          return
         }
       }
 
@@ -584,8 +590,13 @@ export default function DashboardView({
 
     map.on('mouseenter', 'points', () => { map.getCanvas().style.cursor = 'pointer' })
     map.on('mouseleave', 'points', () => { map.getCanvas().style.cursor = 'crosshair' })
-    // Verified events use HTML markers (see the next useEffect) — their click
-    // handlers fire on the DOM element directly, so no layer-click wiring here.
+
+    // Remove our canvas listeners when the effect re-runs (filteredReports
+    // changes frequently) so they don't accumulate into duplicate handlers.
+    return () => {
+      canvas.removeEventListener('pointerdown', onPtrDown)
+      canvas.removeEventListener('pointerup',   onPtrUp)
+    }
   }, [filteredReports, mapReady, reviewMap]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Verified-events symbol layer ─────────────────────────────────────────
