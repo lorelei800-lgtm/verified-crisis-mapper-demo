@@ -503,99 +503,65 @@ export default function DashboardView({
       },
     })
 
-    // ── Tap / click via native PointerEvents ────────────────────────────
-    // MapLibre v4 uses PointerEvents internally. map.on('touchend') carries
-    // a PointerEvent as originalEvent (changedTouches is undefined), so the
-    // previous touchend approach silently failed on Android Chrome.
-    //
-    // Solution: attach pointerdown/pointerup directly to the canvas element.
-    // These fire reliably for both touch (pointerType='touch') and mouse on
-    // all modern browsers.  A 50 ms setTimeout lets MapLibre's synchronous
-    // layer-click handlers set layerConsumed before we decide to place a pin.
-    const canvas = map.getCanvas()
-    let ptrStartX = 0, ptrStartY = 0
+    // ── Tap / click via MapLibre's own `click` event ────────────────────
+    // Earlier we used raw canvas pointerdown/pointerup, but those did not fire
+    // on the user's mobile browser (even an empty-map tap placed no pin), so
+    // pins were unselectable. MapLibre's own `click` event normalizes touch →
+    // click internally and fires reliably across mouse and touch, providing a
+    // ready-made screen point (`e.point`) and `e.lngLat`. We hit-test by
+    // projecting each visible event to screen coords and selecting the nearest
+    // within a finger-friendly radius — independent of symbol-layer querying.
+    const HIT_PX = 26   // generous radius; comfortable for both touch and mouse
+    const onMapClick = (e: maplibregl.MapMouseEvent) => {
+      const { x, y } = e.point
 
-    const onPtrDown = (e: PointerEvent) => {
-      ptrStartX = e.clientX
-      ptrStartY = e.clientY
-    }
-    // All tap/click routing happens synchronously here, hit-testing the WebGL
-    // layers via queryRenderedFeatures on the native PointerEvent. This is the
-    // reliable path for touch on Android Chrome, where MapLibre's own
-    // layer-click on a *symbol* layer (verified events) was not firing — so
-    // webhook pins (GDACS etc.) could not be opened on mobile. Order: verified
-    // symbols first (rendered on top), then citizen points, else drop a pin.
-    const onPtrUp = (e: PointerEvent) => {
-      const dx = e.clientX - ptrStartX
-      const dy = e.clientY - ptrStartY
-      // 15 px tolerance for touch (fingers move even on a "stationary" tap);
-      // 5 px for mouse pointer.
-      const tol = e.pointerType === 'touch' ? 225 : 25
-      if (dx * dx + dy * dy > tol) return   // was a drag / pan
-      const rect = canvas.getBoundingClientRect()
-      const x = e.clientX - rect.left
-      const y = e.clientY - rect.top
-
-      // Finger-friendly hit radius (px). We hit-test by projecting each event's
-      // coordinate to the screen and measuring distance, rather than relying on
-      // queryRenderedFeatures against the symbol layer — that proved unreliable
-      // for touch on mobile. map.project() is exact and always available.
-      const HIT = e.pointerType === 'touch' ? 26 : 12
-
-      // 1) Verified webhook events (rendered on top) — nearest within HIT.
-      {
-        let best: FusedEvent | null = null
-        let bestD = Infinity
-        for (const v of verifiedRef.current) {
-          const p = map.project([v.lng, v.lat])
-          const d = Math.hypot(p.x - x, p.y - y)
-          if (d < bestD) { bestD = d; best = v }
-        }
-        if (best && bestD <= HIT) {
-          setSelectedVerified(best)
-          setSelectedReport(null)
-          setMobileListOpen(false)
-          setMapReportPin(null)
-          return
-        }
+      // 1) Verified webhook events (rendered on top) — nearest within HIT_PX.
+      let bestV: FusedEvent | null = null
+      let bestVD = Infinity
+      for (const v of verifiedRef.current) {
+        const p = map.project([v.lng, v.lat])
+        const d = Math.hypot(p.x - x, p.y - y)
+        if (d < bestVD) { bestVD = d; bestV = v }
+      }
+      if (bestV && bestVD <= HIT_PX) {
+        setSelectedVerified(bestV)
+        setSelectedReport(null)
+        setMobileListOpen(false)
+        setMapReportPin(null)
+        return
       }
 
-      // 2) Citizen report points — nearest within HIT.
-      {
-        let best: DamageReport | null = null
-        let bestD = Infinity
-        for (const r of filteredReportsRef.current) {
-          const p = map.project([r.lng, r.lat])
-          const d = Math.hypot(p.x - x, p.y - y)
-          if (d < bestD) { bestD = d; best = r }
-        }
-        if (best && bestD <= HIT) {
-          setSelectedReport(best)
-          setSelectedVerified(null)
-          setMobileListOpen(false)
-          setMapReportPin(null)
-          return
-        }
+      // 2) Citizen report points — nearest within HIT_PX.
+      let bestR: DamageReport | null = null
+      let bestRD = Infinity
+      for (const r of filteredReportsRef.current) {
+        const p = map.project([r.lng, r.lat])
+        const d = Math.hypot(p.x - x, p.y - y)
+        if (d < bestRD) { bestRD = d; bestR = r }
+      }
+      if (bestR && bestRD <= HIT_PX) {
+        setSelectedReport(bestR)
+        setSelectedVerified(null)
+        setMobileListOpen(false)
+        setMapReportPin(null)
+        return
       }
 
-      // 3) Empty map → drop a new-report pin
-      const lngLat = map.unproject([x, y])
-      setMapReportPin({ lat: lngLat.lat, lng: lngLat.lng })
+      // 3) Empty map → drop a new-report pin.
+      setMapReportPin({ lat: e.lngLat.lat, lng: e.lngLat.lng })
       setSelectedReport(null)
       setSelectedVerified(null)
       setMobileListOpen(false)
     }
-    canvas.addEventListener('pointerdown', onPtrDown)
-    canvas.addEventListener('pointerup',   onPtrUp)
+    map.on('click', onMapClick)
 
     map.on('mouseenter', 'points', () => { map.getCanvas().style.cursor = 'pointer' })
     map.on('mouseleave', 'points', () => { map.getCanvas().style.cursor = 'crosshair' })
 
-    // Remove our canvas listeners when the effect re-runs (filteredReports
-    // changes frequently) so they don't accumulate into duplicate handlers.
+    // Remove the click handler when the effect re-runs (filteredReports changes
+    // frequently) so handlers don't accumulate into duplicate firings.
     return () => {
-      canvas.removeEventListener('pointerdown', onPtrDown)
-      canvas.removeEventListener('pointerup',   onPtrUp)
+      map.off('click', onMapClick)
     }
   }, [filteredReports, mapReady, reviewMap]) // eslint-disable-line react-hooks/exhaustive-deps
 
