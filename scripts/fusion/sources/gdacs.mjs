@@ -54,7 +54,7 @@ const ALERT_LEVEL_MAP = {
 export async function fetchGdacs () {
   const res = await fetch(GDACS_URL, {
     signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
-    headers: { 'User-Agent': 'verified-crisis-mapper/0.1 (+https://github.com/lorelei800-lgtm/verified-crisis-mapper)' },
+    headers: { 'User-Agent': 'verified-crisis-mapper/0.1 (+https://github.com/eukarya-biz/verified-crisis-mapper-demo)' },
   })
   if (!res.ok) throw new Error(`GDACS ${res.status} ${res.statusText}`)
   const xml = await res.text()

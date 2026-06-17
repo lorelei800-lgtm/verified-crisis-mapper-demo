@@ -30,7 +30,7 @@ const FETCH_TIMEOUT_MS = 15000
 export async function fetchUsgs () {
   const res = await fetch(USGS_URL, {
     signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
-    headers: { 'User-Agent': 'verified-crisis-mapper/0.1 (+https://github.com/lorelei800-lgtm/verified-crisis-mapper-demo)' },
+    headers: { 'User-Agent': 'verified-crisis-mapper/0.1 (+https://github.com/eukarya-biz/verified-crisis-mapper-demo)' },
   })
   if (!res.ok) throw new Error(`USGS ${res.status} ${res.statusText}`)
   const json = await res.json()
