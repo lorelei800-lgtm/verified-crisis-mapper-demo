@@ -7,6 +7,7 @@ import { tierColors, damageLevelLabel, infraTypeLabel, channelLabel } from '../u
 import { getTierLabel } from '../utils/trustScore'
 import { isWithinArea } from '../utils/geo'
 import { fetchVerifiedEvents } from '../services/verifiedEvents'
+import { downloadGeoJSON, downloadCSV } from '../utils/exportData'
 
 /**
  * Display metadata for the three webhook sources. Replaces the bare lowercase
@@ -735,6 +736,21 @@ export default function DashboardView({
                   <span className="text-gray-400">verified</span>
                   {visibleVerifiedEvents.length > 0 && <span className="text-blue-500 text-[10px]">view ↗</span>}
                 </button>
+                <span className="text-gray-300">|</span>
+                {/* Data export — GeoJSON / CSV of the currently-visible data.
+                    Backs the GeoJSON/CSV interoperability claim and the pitch
+                    video's "data export" requirement. Pure client-side. */}
+                <span className="flex items-center gap-1" title="Export the visible data (interoperable with WFP, OCHA, HDX, KoboToolbox)">
+                  <span className="text-gray-400">export</span>
+                  <button
+                    onClick={() => downloadGeoJSON(visibleReports, visibleVerifiedEvents)}
+                    className="px-1.5 py-0.5 rounded border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors font-medium text-gray-600"
+                  >GeoJSON</button>
+                  <button
+                    onClick={() => downloadCSV(visibleReports)}
+                    className="px-1.5 py-0.5 rounded border border-gray-200 hover:bg-gray-100 active:bg-gray-200 transition-colors font-medium text-gray-600"
+                  >CSV</button>
+                </span>
               </>
             )}
           </div>
