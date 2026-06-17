@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/verified-crisis-mapper-demo/sw.js', { scope: '/verified-crisis-mapper-demo/' })})}
